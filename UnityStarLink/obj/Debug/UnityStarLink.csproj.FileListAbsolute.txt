@@ -1,0 +1,9 @@
+D:\Development\C# progetti\StarLink\UnityStarLink\bin\Debug\UnityStarLink.dll
+D:\Development\C# progetti\StarLink\UnityStarLink\bin\Debug\UnityStarLink.pdb
+D:\Development\C# progetti\StarLink\UnityStarLink\bin\Debug\StarLink.dll
+D:\Development\C# progetti\StarLink\UnityStarLink\bin\Debug\UnityEngine.dll
+D:\Development\C# progetti\StarLink\UnityStarLink\bin\Debug\StarLink.pdb
+D:\Development\C# progetti\StarLink\UnityStarLink\bin\Debug\UnityEngine.xml
+D:\Development\C# progetti\StarLink\UnityStarLink\obj\Debug\UnityStarLink.csprojResolveAssemblyReference.cache
+D:\Development\C# progetti\StarLink\UnityStarLink\obj\Debug\UnityStarLink.dll
+D:\Development\C# progetti\StarLink\UnityStarLink\obj\Debug\UnityStarLink.pdb

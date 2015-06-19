@@ -1,0 +1,4 @@
+D:\Development\C# progetti\StarLink\StarLink\bin\Release\StarLink.dll
+D:\Development\C# progetti\StarLink\StarLink\bin\Release\StarLink.pdb
+D:\Development\C# progetti\StarLink\StarLink\obj\Release\StarLink.dll
+D:\Development\C# progetti\StarLink\StarLink\obj\Release\StarLink.pdb

@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarLink", "StarLink\StarLink.csproj", "{77E30E7C-1480-40EE-BECA-45EAADFEF038}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryTest", "Samples\LibraryTest\LibraryTest.csproj", "{6643F2BF-ADAD-4FD5-9078-7243F78D6B79}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{4267EC8C-4D0A-4247-856D-244C3F946766}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat", "Samples\Chat\Chat.csproj", "{3DA69A3D-8FD3-4872-96CA-7EB97816F47F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityStarLink", "UnityStarLink\UnityStarLink.csproj", "{B4DF0D83-EFD9-4A79-AD14-31B802952DC3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77E30E7C-1480-40EE-BECA-45EAADFEF038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E30E7C-1480-40EE-BECA-45EAADFEF038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E30E7C-1480-40EE-BECA-45EAADFEF038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E30E7C-1480-40EE-BECA-45EAADFEF038}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6643F2BF-ADAD-4FD5-9078-7243F78D6B79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6643F2BF-ADAD-4FD5-9078-7243F78D6B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6643F2BF-ADAD-4FD5-9078-7243F78D6B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6643F2BF-ADAD-4FD5-9078-7243F78D6B79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DA69A3D-8FD3-4872-96CA-7EB97816F47F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DA69A3D-8FD3-4872-96CA-7EB97816F47F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DA69A3D-8FD3-4872-96CA-7EB97816F47F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DA69A3D-8FD3-4872-96CA-7EB97816F47F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4DF0D83-EFD9-4A79-AD14-31B802952DC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4DF0D83-EFD9-4A79-AD14-31B802952DC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4DF0D83-EFD9-4A79-AD14-31B802952DC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4DF0D83-EFD9-4A79-AD14-31B802952DC3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6643F2BF-ADAD-4FD5-9078-7243F78D6B79} = {4267EC8C-4D0A-4247-856D-244C3F946766}
+		{3DA69A3D-8FD3-4872-96CA-7EB97816F47F} = {4267EC8C-4D0A-4247-856D-244C3F946766}
+	EndGlobalSection
+EndGlobal
