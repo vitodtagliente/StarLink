@@ -12,11 +12,30 @@ namespace UnityStarLink
 {
     public abstract class StarBehaviour : MonoBehaviour
     {
+        public bool Dirty { get; set; }
 
+        void Update()
+        {
+            // reflection
+            Attribute[] attrs = Attribute.GetCustomAttributes(typeof(StarVar));
+            foreach (var attr in attrs) {
+                Debug.Log(attr.GetType());
+            }
 
-        public virtual void ReadMessage(StarMessage message);
+        }
 
-        public virtual StarMessage WriteMessage();
+        protected void Bind()
+        {
 
+        }
+
+        public virtual void ReadMessage(StarMessage message)
+        {
+        }
+
+        public virtual StarMessage WriteMessage()
+        {
+            return null;
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using StarLink;
+using UnityStarLink.Component;
 
 namespace UnityStarLink
 {
@@ -10,7 +11,7 @@ namespace UnityStarLink
     {
         public static StarScene singleton;
 
-        public Dictionary<int, GameObject> Objects;
+        Dictionary<int, GameObject> Objects;
 
         public GameObject Player
         {
@@ -27,12 +28,34 @@ namespace UnityStarLink
 
         void Start()
         {
-
+            
         }
 
         void Update()
         {
 
+        }
+
+        void Add(int starId, GameObject obj)
+        {
+            if (!Objects.ContainsKey(starId))
+                Objects.Add(starId, obj);
+        }
+
+        public GameObject Find(int id)
+        {
+            if (Objects.ContainsKey(id))
+                return Objects[id];
+
+            var result = GameObject.FindObjectsOfType(typeof(StarIdentity)) as StarIdentity[];
+            foreach (var starId in result)
+            {
+                Add(starId.Id, starId.gameObject);
+                if (starId.Id.Equals(id))
+                    return starId.gameObject;
+            }
+
+            return null;
         }
 
         void OnLevelWasLoaded(int level)

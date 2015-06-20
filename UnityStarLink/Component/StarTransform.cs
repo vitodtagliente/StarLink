@@ -8,6 +8,7 @@ using StarLink;
 
 namespace UnityStarLink.Component
 {
+    [RequireComponent(typeof(StarIdentity))]
     public class StarTransform : StarBehaviour
     {
 

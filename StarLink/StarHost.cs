@@ -7,7 +7,7 @@ using System.Net.Sockets;
 
 namespace StarLink
 {
-    public class StarHost
+    public abstract class StarHost
     {
         private static readonly string DefaultAddress = "localhost";
         private static readonly int DefaultPort = 7777;

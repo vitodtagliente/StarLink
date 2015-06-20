@@ -7,9 +7,8 @@ namespace UnityStarLink
 {
     public enum MessageType
     {
-        SyncIdentity = 0,
-        SyncTransform = 1,
-        Connection = 2,
-        Disconnect = 3
+        Normal = 0,
+        Command = 1,
+        Behaviour = 2
     }
 }

@@ -8,6 +8,6 @@ namespace UnityStarLink
     [System.AttributeUsage(AttributeTargets.Field)]
     public class StarVar : System.Attribute
     {
-        public int dirty;
+        public int Dirty;
     }
 }

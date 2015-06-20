@@ -20,25 +20,31 @@ namespace UnityStarLink
         public StarClient Host { get; private set; }
 
         [SerializeField]
-        string netIp = "localhost";
+        string ip = "localhost";
         [SerializeField]
-        int netPort = 7777;
+        int port = 7777;
         [SerializeField]
-        ProtocolType netProtocol = ProtocolType.Tcp;
+        ProtocolType protocol = ProtocolType.Tcp;
+
+        [SerializeField]
+        bool dontDestroyOnLoad = true;
         
         void Awake()
         {
             singleton = this;
-            DontDestroyOnLoad(gameObject);
+            if(dontDestroyOnLoad)
+                DontDestroyOnLoad(gameObject);
 
             Host = new StarClient();
-            Host.Address = netIp;
-            Host.Port = netPort;
-            Host.Protocol = netProtocol;
+            Host.Address = ip;
+            Host.Port = port;
+            Host.Protocol = protocol;
         }
 
-        void Start()
+        public void Connect()
         {
+            if (Host.Connected) return;
+
             Host.Connect();
             if (!Host.Connected)
             {
@@ -81,17 +87,39 @@ namespace UnityStarLink
             }
         }
 
-        public virtual void OnMessage(int messageType, StarMessage message)
-        {;
+        void OnMessage(int messageType, StarMessage message)
+        {
             switch (messageType)
             {
-                case ((int)MessageType.Disconnect):
-                    Stop();
+                case ((int)MessageType.Normal):
+                    
+                    break;
+                case ((int)MessageType.Command):
+
+                    break;
+                case ((int)MessageType.Behaviour):
+
+                    int starId = message.ReadInt();
+                    string starComponent = message.ReadString();
+
+                    var gameobject = StarScene.singleton.Find(starId);
+                    if (gameobject != null)
+                    {
+                        var behaviour = gameobject.GetComponent(starComponent);
+                        if (behaviour != null)
+                            ((StarBehaviour)behaviour).ReadMessage(message);
+                    }                        
+
                     break;
                 default:
-                    Debug.Log("Unknow message type");
+                    Log("Unknown message type");
                     break;
             }
+        }
+
+        void OnApplicationQuit()
+        {
+            Host.Close();
         }
     }
 }
