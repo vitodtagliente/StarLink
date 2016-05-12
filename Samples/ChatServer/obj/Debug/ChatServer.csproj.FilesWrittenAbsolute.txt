@@ -1,0 +1,7 @@
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/ChatServer/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/ChatServer/bin/Debug/ChatServer.exe.mdb
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/ChatServer/bin/Debug/ChatServer.exe
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/ChatServer/obj/Debug/ChatServer.exe
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/ChatServer/obj/Debug/ChatServer.exe.mdb
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/ChatServer/bin/Debug/StarLink.dll
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/ChatServer/bin/Debug/StarLink.dll.mdb

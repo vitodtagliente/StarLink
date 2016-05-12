@@ -1,8 +1,0 @@
-D:\Development\C# progetti\StarLink\Samples\LibraryTest\bin\Debug\LibraryTest.exe.config
-D:\Development\C# progetti\StarLink\Samples\LibraryTest\bin\Debug\LibraryTest.exe
-D:\Development\C# progetti\StarLink\Samples\LibraryTest\bin\Debug\LibraryTest.pdb
-D:\Development\C# progetti\StarLink\Samples\LibraryTest\bin\Debug\StarLink.dll
-D:\Development\C# progetti\StarLink\Samples\LibraryTest\bin\Debug\StarLink.pdb
-D:\Development\C# progetti\StarLink\Samples\LibraryTest\obj\Debug\LibraryTest.csprojResolveAssemblyReference.cache
-D:\Development\C# progetti\StarLink\Samples\LibraryTest\obj\Debug\LibraryTest.exe
-D:\Development\C# progetti\StarLink\Samples\LibraryTest\obj\Debug\LibraryTest.pdb

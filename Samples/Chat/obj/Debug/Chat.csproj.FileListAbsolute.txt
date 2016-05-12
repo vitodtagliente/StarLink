@@ -1,8 +1,0 @@
-D:\Development\C# progetti\StarLink\Samples\Chat\bin\Debug\Chat.exe.config
-D:\Development\C# progetti\StarLink\Samples\Chat\bin\Debug\Chat.exe
-D:\Development\C# progetti\StarLink\Samples\Chat\bin\Debug\Chat.pdb
-D:\Development\C# progetti\StarLink\Samples\Chat\bin\Debug\StarLink.dll
-D:\Development\C# progetti\StarLink\Samples\Chat\bin\Debug\StarLink.pdb
-D:\Development\C# progetti\StarLink\Samples\Chat\obj\Debug\Chat.csprojResolveAssemblyReference.cache
-D:\Development\C# progetti\StarLink\Samples\Chat\obj\Debug\Chat.exe
-D:\Development\C# progetti\StarLink\Samples\Chat\obj\Debug\Chat.pdb

@@ -1,0 +1,7 @@
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/StarDataTests/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/StarDataTests/bin/Debug/StarDataTests.exe.mdb
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/StarDataTests/bin/Debug/StarDataTests.exe
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/StarDataTests/obj/Debug/StarDataTests.exe
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/StarDataTests/obj/Debug/StarDataTests.exe.mdb
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/StarDataTests/bin/Debug/StarLink.dll
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/StarDataTests/bin/Debug/StarLink.dll.mdb

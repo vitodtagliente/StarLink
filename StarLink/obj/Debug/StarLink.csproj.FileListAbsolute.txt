@@ -3,3 +3,8 @@ D:\Development\C# progetti\StarLink\StarLink\bin\Debug\StarLink.pdb
 D:\Development\C# progetti\StarLink\StarLink\obj\Debug\StarLink.dll
 D:\Development\C# progetti\StarLink\StarLink\obj\Debug\StarLink.pdb
 D:\Development\C# progetti\StarLink\StarLink\obj\Debug\StarLink.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\StarLink\StarLink\bin\Debug\StarLink.dll
+D:\Documents\GitHub\StarLink\StarLink\bin\Debug\StarLink.pdb
+D:\Documents\GitHub\StarLink\StarLink\obj\Debug\StarLink.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\StarLink\StarLink\obj\Debug\StarLink.dll
+D:\Documents\GitHub\StarLink\StarLink\obj\Debug\StarLink.pdb

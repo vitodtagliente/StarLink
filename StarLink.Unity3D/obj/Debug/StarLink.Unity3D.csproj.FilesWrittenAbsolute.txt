@@ -1,0 +1,8 @@
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/StarLink.Unity3D/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/StarLink.Unity3D/bin/Debug/StarLink.Unity3D.dll.mdb
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/StarLink.Unity3D/bin/Debug/StarLink.Unity3D.dll
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/StarLink.Unity3D/obj/Debug/StarLink.Unity3D.dll
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/StarLink.Unity3D/obj/Debug/StarLink.Unity3D.dll.mdb
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/StarLink.Unity3D/bin/Debug/UnityEngine.dll
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/StarLink.Unity3D/bin/Debug/StarLink.dll
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/StarLink.Unity3D/bin/Debug/StarLink.dll.mdb

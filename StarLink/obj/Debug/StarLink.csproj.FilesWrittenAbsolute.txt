@@ -1,0 +1,4 @@
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/StarLink/bin/Debug/StarLink.dll.mdb
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/StarLink/bin/Debug/StarLink.dll
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/StarLink/obj/Debug/StarLink.dll
+/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/StarLink/obj/Debug/StarLink.dll.mdb
