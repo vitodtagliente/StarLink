@@ -15,7 +15,10 @@ namespace StarLink
 
 		public Socket Socket { get; protected set; }
 
-		public bool Connected 
+        public Action OnConnection = delegate { }, OnDisconnection = delegate { }, OnConnectionFailed = delegate { };
+        public Action<StarEventData> OnMessage = delegate { };
+
+        public bool Connected 
 		{
 			get {
 				if (Socket == null)
@@ -79,31 +82,15 @@ namespace StarLink
 
 		public int PollTime = 1000;
 
-		public Action<string> Log {
-			get
-			{
-				return logHandler;
-			}
-			set
-			{
-				logHandler = value;
-			}
-		}
+        public Action<string> OnLog = delegate { };
+        protected void Log(string text)
+        {
+            if (OnLog != null)
+                OnLog.Invoke(text);
+        }
 
 		public bool EnableThreading = true;
-
-		private Dictionary<string, Action<StarEventData>> handlers = new Dictionary<string, Action<StarEventData>>();
-		private Action<string> logHandler;
-
-		public List<string> RegisteredEvents {
-			get {				
-				List<string> events = new List<string> ();
-				foreach (var e in handlers.Keys)
-					events.Add (e);
-				return events;
-			}
-		}
-
+        
 		public StarHost()
 		{
 			Address = ADDRESS;
@@ -111,7 +98,7 @@ namespace StarLink
 			Protocol = ProtocolType.Tcp;
 			Family = AddressFamily.InterNetwork;
 
-			Log = LogCallback;
+            //Log = LogCallback;
 		}
 
 		public void Connect(string ip, int port)
@@ -130,34 +117,12 @@ namespace StarLink
 				Address = "127.0.0.1";
 			IPEndPoint localEndPoint = new IPEndPoint(IPAddress.Parse(Address), Port);
 			Socket = new Socket(Family, type, Protocol);
-            
+
             Log("StarHost::Connection(Address: " + Address + ", Port: " + Port + ")");
 
             Start(localEndPoint);
 		}
-
-		public void On(string ev, Action<StarEventData> callback)
-		{
-			if (!handlers.ContainsKey(ev)) {
-				handlers [ev] = callback;
-			}
-		}
-
-		void LogCallback(string log)
-		{
-			// todo
-		}
-
-		protected void CallEvent(string ev, StarEventData data)
-		{
-			if (!handlers.ContainsKey(ev)) { return; }
-			try{
-				handlers[ev]( data );
-			} catch(Exception){
-
-			}
-		}
-
+        
 		public abstract void Start (IPEndPoint localEndPoint);
 		public abstract bool IsConnected (int pollTime = 1000);
 
@@ -170,7 +135,7 @@ namespace StarLink
 			}
 			catch (Exception e)
 			{
-				Log("StarHost::Close: " + e.Message);
+                Log("StarHost::Close: " + e.Message);
 			}
 		}
 
@@ -198,7 +163,7 @@ namespace StarLink
                         return text;
 					}
 				} catch (Exception e) {
-					Log("StarHost::ReceiveData: " + e.Message);
+                    Log("StarHost::ReceiveData: " + e.Message);
 				}
 			}
 			return null;
@@ -224,7 +189,7 @@ namespace StarLink
 				}
 				catch (Exception e)
 				{
-					Log("StarHost::SendData: " + e.Message);                    
+                    Log("StarHost::SendData: " + e.Message);               
 					return false;
 				}
 			}

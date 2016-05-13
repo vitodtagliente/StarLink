@@ -1,0 +1,7 @@
+D:\Documents\GitHub\StarLink\Samples\StarDataTests\bin\Release\StarDataTests.exe
+D:\Documents\GitHub\StarLink\Samples\StarDataTests\bin\Release\StarDataTests.pdb
+D:\Documents\GitHub\StarLink\Samples\StarDataTests\bin\Release\StarLink.dll
+D:\Documents\GitHub\StarLink\Samples\StarDataTests\bin\Release\StarLink.pdb
+D:\Documents\GitHub\StarLink\Samples\StarDataTests\obj\Release\StarDataTests.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\StarLink\Samples\StarDataTests\obj\Release\StarDataTests.exe
+D:\Documents\GitHub\StarLink\Samples\StarDataTests\obj\Release\StarDataTests.pdb

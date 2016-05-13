@@ -8,7 +8,7 @@ namespace StarLink
 	public class StarClient : StarHost
 	{
 		protected Thread receiveThread;
-
+                
 		public override void Start(IPEndPoint endPoint)
 		{
 			if (Connected)
@@ -25,7 +25,8 @@ namespace StarLink
 			if (Connected) {
 				Log ("StarClient::Start: connected");
 
-				CallEvent ("connect", new StarEventData ());
+                if (OnConnection != null)
+                    OnConnection.Invoke();
 
 				if (EnableThreading) {
 					receiveThread = new Thread (ReceiveCallback);
@@ -36,7 +37,8 @@ namespace StarLink
 			{
 				Log ("StarClient::Start: connection failed");
 
-				CallEvent ("connection failed", new StarEventData ());
+                if (OnConnectionFailed != null)
+                    OnConnectionFailed.Invoke();
 			}
 		}
 
@@ -54,8 +56,10 @@ namespace StarLink
 					Close ();
 
 					receiveThread.Abort ();
-					CallEvent ("disconnect", new StarEventData ());
-				}
+
+                    if (OnDisconnection != null)
+                        OnDisconnection.Invoke();
+                }
 			}
 			lastConnectionState = state;
 			return state;
@@ -67,14 +71,13 @@ namespace StarLink
 			while (Connected) 
 			{
 				var data = Receive ();
-				if (data != null && 
-                    //data.IsNull () == false
-                    string.IsNullOrEmpty(data) == false
-                    )
+				if (data != null && string.IsNullOrEmpty(data) == false)
                 {
 					Log ("StarClient::Receive: new message");
-					CallEvent ("message", new StarEventData (data));
-				}
+
+                    if (OnMessage != null)
+                        OnMessage.Invoke(new StarEventData(data));
+                }
 			}
 		}
 

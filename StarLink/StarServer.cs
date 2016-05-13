@@ -11,6 +11,8 @@ namespace StarLink
 		protected Thread acceptThread;
 		protected Dictionary<Socket, Thread> serveThreads = new Dictionary<Socket, Thread>();
 
+        public Action<Socket> OnClientConnection = delegate { }, OnClientDisconnection = delegate { };
+
 		int netMaxConnections = 100;
 		public int MaxConnections
 		{
@@ -47,7 +49,9 @@ namespace StarLink
 
 			if (Connected) 
 			{
-				CallEvent ("listen", new StarEventData ());
+                if (OnConnection != null)
+                    OnConnection.Invoke();
+
 				if (EnableThreading) {
 					acceptThread = new Thread (AcceptCallback);
 					acceptThread.Start ();
@@ -57,7 +61,8 @@ namespace StarLink
 			{
 				Log ("StarServer::Start: connection failed");
 
-				CallEvent ("connection failed", new StarEventData ());
+                if (OnConnectionFailed != null)
+                    OnConnectionFailed.Invoke();
 			}
 		}
 
@@ -88,11 +93,13 @@ namespace StarLink
                     string.IsNullOrEmpty(data) == false
                     ) 
 				{
-					CallEvent ("message", new StarEventData (socket, data));
+                    if (OnMessage != null)
+                        OnMessage.Invoke(new StarEventData(socket, data));
 				}
 			}
 
-			CallEvent ("user disconnect", new StarEventData (socket));
+            if (OnClientDisconnection != null)
+                OnClientDisconnection.Invoke(socket);
 
 			serveThreads.Remove (socket);
 		}
@@ -128,7 +135,8 @@ namespace StarLink
 					var clientSocket = Socket.Accept();
 					Clients.Add(clientSocket);
 
-					CallEvent("user connect", new StarEventData(clientSocket));
+                    if (OnClientConnection != null)
+                        OnClientConnection.Invoke(clientSocket);
 
 					return clientSocket;
 				}

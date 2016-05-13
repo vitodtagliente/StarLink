@@ -17,10 +17,10 @@ namespace ChatClient
 			Console.WriteLine ();
 
 			client = new StarClient ();
-			client.On ("connect", OnConnection);
-			client.On ("disconnect", OnDisconnect);
-			client.On ("message", OnMessage);
-			client.Log = OnLog;
+            client.OnConnection = OnConnection;
+            client.OnDisconnection = OnDisconnection;
+            client.OnMessage = OnMessage;
+			client.OnLog = OnLog;
 
 			client.Connect ();
 
@@ -49,12 +49,12 @@ namespace ChatClient
 			ColorLine (e.data.ToString ().Trim ('"'), ConsoleColor.Magenta);
 		}
 
-		static void OnConnection(StarEventData e)
+		static void OnConnection()
 		{
 			ColorLine ("Connected", ConsoleColor.Green);
 		}
 
-		static void OnDisconnect(StarEventData e)
+		static void OnDisconnection()
 		{
 			ColorLine ("Disconnection", ConsoleColor.Green);
 		}

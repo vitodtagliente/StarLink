@@ -1,0 +1,7 @@
+D:\Documents\GitHub\StarLink\Samples\ChatServer\obj\Release\ChatServer.exe
+D:\Documents\GitHub\StarLink\Samples\ChatServer\bin\Release\ChatServer.exe
+D:\Documents\GitHub\StarLink\Samples\ChatServer\bin\Release\ChatServer.pdb
+D:\Documents\GitHub\StarLink\Samples\ChatServer\bin\Release\StarLink.dll
+D:\Documents\GitHub\StarLink\Samples\ChatServer\bin\Release\StarLink.pdb
+D:\Documents\GitHub\StarLink\Samples\ChatServer\obj\Release\ChatServer.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\StarLink\Samples\ChatServer\obj\Release\ChatServer.pdb

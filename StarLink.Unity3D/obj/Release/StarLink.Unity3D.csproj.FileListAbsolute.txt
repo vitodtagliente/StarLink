@@ -1,0 +1,8 @@
+D:\Documents\GitHub\StarLink\StarLink.Unity3D\bin\Release\StarLink.Unity3D.dll
+D:\Documents\GitHub\StarLink\StarLink.Unity3D\bin\Release\StarLink.Unity3D.pdb
+D:\Documents\GitHub\StarLink\StarLink.Unity3D\bin\Release\StarLink.dll
+D:\Documents\GitHub\StarLink\StarLink.Unity3D\bin\Release\UnityEngine.dll
+D:\Documents\GitHub\StarLink\StarLink.Unity3D\bin\Release\StarLink.pdb
+D:\Documents\GitHub\StarLink\StarLink.Unity3D\obj\Release\StarLink.Unity3D.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\StarLink\StarLink.Unity3D\obj\Release\StarLink.Unity3D.dll
+D:\Documents\GitHub\StarLink\StarLink.Unity3D\obj\Release\StarLink.Unity3D.pdb

@@ -1,5 +1,6 @@
 ﻿using System;
 using StarLink;
+using System.Net.Sockets;
 
 namespace ChatServer
 {
@@ -13,11 +14,11 @@ namespace ChatServer
 
 			server = new StarServer ();
 			server.EnableThreading = true;
-			server.On ("listen", OnListen);
-			server.On ("user connect", OnUserConnect);
-			server.On ("user disconnect", OnUserDisconnect);
-			server.On ("message", OnMessage);
-			server.Log = OnLog;
+            server.OnConnection = OnListen;
+            server.OnClientConnection = OnUserConnect;
+            server.OnClientDisconnection = OnUserDisconnect;
+            server.OnMessage = OnMessage;
+			server.OnLog = OnLog;
 
 			server.Connect ();
 
@@ -44,17 +45,17 @@ namespace ChatServer
 			server.Broadcast (e.data, e.socket);
 		}
 
-		static void OnListen(StarEventData e)
+		static void OnListen()
 		{
 			ColorLine("Listening...", ConsoleColor.Cyan);
 		}
 
-		static void OnUserConnect(StarEventData e)
+		static void OnUserConnect(Socket client)
 		{
 			ColorLine("user connected...", ConsoleColor.Green);
 		}
 
-		static void OnUserDisconnect(StarEventData e)
+		static void OnUserDisconnect(Socket client)
 		{
 			ColorLine("user disconnected...", ConsoleColor.Green);
 		}
