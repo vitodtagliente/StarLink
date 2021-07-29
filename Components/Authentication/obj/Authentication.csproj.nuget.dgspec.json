@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HackJ\\Desktop\\Server\\Components\\Authentication\\Authentication.csproj": {}
+    "C:\\Users\\HackJ\\Desktop\\StarLink\\Components\\Authentication\\Authentication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HackJ\\Desktop\\Server\\Components\\Authentication\\Authentication.csproj": {
+    "C:\\Users\\HackJ\\Desktop\\StarLink\\Components\\Authentication\\Authentication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HackJ\\Desktop\\Server\\Components\\Authentication\\Authentication.csproj",
+        "projectUniqueName": "C:\\Users\\HackJ\\Desktop\\StarLink\\Components\\Authentication\\Authentication.csproj",
         "projectName": "Authentication",
-        "projectPath": "C:\\Users\\HackJ\\Desktop\\Server\\Components\\Authentication\\Authentication.csproj",
+        "projectPath": "C:\\Users\\HackJ\\Desktop\\StarLink\\Components\\Authentication\\Authentication.csproj",
         "packagesPath": "C:\\Users\\HackJ\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HackJ\\Desktop\\Server\\Components\\Authentication\\obj\\",
+        "outputPath": "C:\\Users\\HackJ\\Desktop\\StarLink\\Components\\Authentication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HackJ\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\HackJ\\Desktop\\Server\\StarLink\\StarLink.csproj": {
-                "projectPath": "C:\\Users\\HackJ\\Desktop\\Server\\StarLink\\StarLink.csproj"
+              "C:\\Users\\HackJ\\Desktop\\StarLink\\StarLink\\StarLink.csproj": {
+                "projectPath": "C:\\Users\\HackJ\\Desktop\\StarLink\\StarLink\\StarLink.csproj"
               }
             }
           }
@@ -61,14 +61,14 @@
         }
       }
     },
-    "C:\\Users\\HackJ\\Desktop\\Server\\StarLink\\StarLink.csproj": {
+    "C:\\Users\\HackJ\\Desktop\\StarLink\\StarLink\\StarLink.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HackJ\\Desktop\\Server\\StarLink\\StarLink.csproj",
+        "projectUniqueName": "C:\\Users\\HackJ\\Desktop\\StarLink\\StarLink\\StarLink.csproj",
         "projectName": "StarLink",
-        "projectPath": "C:\\Users\\HackJ\\Desktop\\Server\\StarLink\\StarLink.csproj",
+        "projectPath": "C:\\Users\\HackJ\\Desktop\\StarLink\\StarLink\\StarLink.csproj",
         "packagesPath": "C:\\Users\\HackJ\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HackJ\\Desktop\\Server\\StarLink\\obj\\",
+        "outputPath": "C:\\Users\\HackJ\\Desktop\\StarLink\\StarLink\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HackJ\\AppData\\Roaming\\NuGet\\NuGet.Config",

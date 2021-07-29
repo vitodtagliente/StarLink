@@ -10,3 +10,15 @@ C:\Users\HackJ\Desktop\Server\Components\GameWorld\obj\Debug\netcoreapp3.1\GameW
 C:\Users\HackJ\Desktop\Server\Components\GameWorld\obj\Debug\netcoreapp3.1\GameWorld.csproj.CopyComplete
 C:\Users\HackJ\Desktop\Server\Components\GameWorld\obj\Debug\netcoreapp3.1\GameWorld.dll
 C:\Users\HackJ\Desktop\Server\Components\GameWorld\obj\Debug\netcoreapp3.1\GameWorld.pdb
+C:\Users\HackJ\Desktop\StarLink\Components\GameWorld\bin\Debug\netcoreapp3.1\GameWorld.deps.json
+C:\Users\HackJ\Desktop\StarLink\Components\GameWorld\bin\Debug\netcoreapp3.1\GameWorld.dll
+C:\Users\HackJ\Desktop\StarLink\Components\GameWorld\bin\Debug\netcoreapp3.1\GameWorld.pdb
+C:\Users\HackJ\Desktop\StarLink\Components\GameWorld\bin\Debug\netcoreapp3.1\StarLink.dll
+C:\Users\HackJ\Desktop\StarLink\Components\GameWorld\bin\Debug\netcoreapp3.1\StarLink.pdb
+C:\Users\HackJ\Desktop\StarLink\Components\GameWorld\obj\Debug\netcoreapp3.1\GameWorld.csproj.AssemblyReference.cache
+C:\Users\HackJ\Desktop\StarLink\Components\GameWorld\obj\Debug\netcoreapp3.1\GameWorld.AssemblyInfoInputs.cache
+C:\Users\HackJ\Desktop\StarLink\Components\GameWorld\obj\Debug\netcoreapp3.1\GameWorld.AssemblyInfo.cs
+C:\Users\HackJ\Desktop\StarLink\Components\GameWorld\obj\Debug\netcoreapp3.1\GameWorld.csproj.CoreCompileInputs.cache
+C:\Users\HackJ\Desktop\StarLink\Components\GameWorld\obj\Debug\netcoreapp3.1\GameWorld.csproj.CopyComplete
+C:\Users\HackJ\Desktop\StarLink\Components\GameWorld\obj\Debug\netcoreapp3.1\GameWorld.dll
+C:\Users\HackJ\Desktop\StarLink\Components\GameWorld\obj\Debug\netcoreapp3.1\GameWorld.pdb

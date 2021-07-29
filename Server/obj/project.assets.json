@@ -70,11 +70,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HackJ\\Desktop\\Server\\Server\\Server.csproj",
+      "projectUniqueName": "C:\\Users\\HackJ\\Desktop\\StarLink\\Server\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "C:\\Users\\HackJ\\Desktop\\Server\\Server\\Server.csproj",
+      "projectPath": "C:\\Users\\HackJ\\Desktop\\StarLink\\Server\\Server.csproj",
       "packagesPath": "C:\\Users\\HackJ\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HackJ\\Desktop\\Server\\Server\\obj\\",
+      "outputPath": "C:\\Users\\HackJ\\Desktop\\StarLink\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HackJ\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -90,14 +90,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\HackJ\\Desktop\\Server\\Components\\Authentication\\Authentication.csproj": {
-              "projectPath": "C:\\Users\\HackJ\\Desktop\\Server\\Components\\Authentication\\Authentication.csproj"
+            "C:\\Users\\HackJ\\Desktop\\StarLink\\Components\\Authentication\\Authentication.csproj": {
+              "projectPath": "C:\\Users\\HackJ\\Desktop\\StarLink\\Components\\Authentication\\Authentication.csproj"
             },
-            "C:\\Users\\HackJ\\Desktop\\Server\\Components\\GameWorld\\GameWorld.csproj": {
-              "projectPath": "C:\\Users\\HackJ\\Desktop\\Server\\Components\\GameWorld\\GameWorld.csproj"
+            "C:\\Users\\HackJ\\Desktop\\StarLink\\Components\\GameWorld\\GameWorld.csproj": {
+              "projectPath": "C:\\Users\\HackJ\\Desktop\\StarLink\\Components\\GameWorld\\GameWorld.csproj"
             },
-            "C:\\Users\\HackJ\\Desktop\\Server\\StarLink\\StarLink.csproj": {
-              "projectPath": "C:\\Users\\HackJ\\Desktop\\Server\\StarLink\\StarLink.csproj"
+            "C:\\Users\\HackJ\\Desktop\\StarLink\\StarLink\\StarLink.csproj": {
+              "projectPath": "C:\\Users\\HackJ\\Desktop\\StarLink\\StarLink\\StarLink.csproj"
             }
           }
         }
