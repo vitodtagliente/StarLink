@@ -1,7 +1,0 @@
-/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/ChatClient/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/ChatClient/bin/Debug/ChatClient.exe.mdb
-/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/ChatClient/bin/Debug/ChatClient.exe
-/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/ChatClient/obj/Debug/ChatClient.exe
-/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/ChatClient/obj/Debug/ChatClient.exe.mdb
-/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/ChatClient/bin/Debug/StarLink.dll
-/mnt/E8DCAB6EDCAB35AA/Documents/GitHub/StarLink/Samples/ChatClient/bin/Debug/StarLink.dll.mdb

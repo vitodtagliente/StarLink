@@ -1,4 +1,0 @@
-/media/menick/Data/Documents/GitHub/StarLink/StarLink/bin/Release/StarLink.dll.mdb
-/media/menick/Data/Documents/GitHub/StarLink/StarLink/bin/Release/StarLink.dll
-/media/menick/Data/Documents/GitHub/StarLink/StarLink/obj/Release/StarLink.dll
-/media/menick/Data/Documents/GitHub/StarLink/StarLink/obj/Release/StarLink.dll.mdb

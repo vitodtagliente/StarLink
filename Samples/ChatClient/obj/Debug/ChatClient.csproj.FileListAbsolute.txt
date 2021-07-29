@@ -1,7 +1,0 @@
-D:\Documents\GitHub\StarLink\Samples\ChatClient\bin\Debug\ChatClient.exe
-D:\Documents\GitHub\StarLink\Samples\ChatClient\bin\Debug\ChatClient.pdb
-D:\Documents\GitHub\StarLink\Samples\ChatClient\bin\Debug\StarLink.dll
-D:\Documents\GitHub\StarLink\Samples\ChatClient\bin\Debug\StarLink.pdb
-D:\Documents\GitHub\StarLink\Samples\ChatClient\obj\Debug\ChatClient.csprojResolveAssemblyReference.cache
-D:\Documents\GitHub\StarLink\Samples\ChatClient\obj\Debug\ChatClient.exe
-D:\Documents\GitHub\StarLink\Samples\ChatClient\obj\Debug\ChatClient.pdb

@@ -1,7 +1,0 @@
-/media/menick/Data/Documents/GitHub/StarLink/Samples/ChatClient/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/media/menick/Data/Documents/GitHub/StarLink/Samples/ChatClient/bin/Release/ChatClient.exe.mdb
-/media/menick/Data/Documents/GitHub/StarLink/Samples/ChatClient/bin/Release/ChatClient.exe
-/media/menick/Data/Documents/GitHub/StarLink/Samples/ChatClient/obj/Release/ChatClient.exe
-/media/menick/Data/Documents/GitHub/StarLink/Samples/ChatClient/obj/Release/ChatClient.exe.mdb
-/media/menick/Data/Documents/GitHub/StarLink/Samples/ChatClient/bin/Release/StarLink.dll
-/media/menick/Data/Documents/GitHub/StarLink/Samples/ChatClient/bin/Release/StarLink.dll.mdb

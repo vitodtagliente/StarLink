@@ -1,9 +1,0 @@
-D:\Development\C# progetti\StarLink\StarLink\bin\Release\StarLink.dll
-D:\Development\C# progetti\StarLink\StarLink\bin\Release\StarLink.pdb
-D:\Development\C# progetti\StarLink\StarLink\obj\Release\StarLink.dll
-D:\Development\C# progetti\StarLink\StarLink\obj\Release\StarLink.pdb
-D:\Documents\GitHub\StarLink\StarLink\bin\Release\StarLink.dll
-D:\Documents\GitHub\StarLink\StarLink\bin\Release\StarLink.pdb
-D:\Documents\GitHub\StarLink\StarLink\obj\Release\StarLink.csprojResolveAssemblyReference.cache
-D:\Documents\GitHub\StarLink\StarLink\obj\Release\StarLink.dll
-D:\Documents\GitHub\StarLink\StarLink\obj\Release\StarLink.pdb
