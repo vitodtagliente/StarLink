@@ -1,0 +1,12 @@
+C:\Users\HackJ\Desktop\Server\StarLink.Authentication\bin\Debug\netcoreapp3.1\StarLink.Authentication.deps.json
+C:\Users\HackJ\Desktop\Server\StarLink.Authentication\bin\Debug\netcoreapp3.1\StarLink.Authentication.dll
+C:\Users\HackJ\Desktop\Server\StarLink.Authentication\bin\Debug\netcoreapp3.1\StarLink.Authentication.pdb
+C:\Users\HackJ\Desktop\Server\StarLink.Authentication\bin\Debug\netcoreapp3.1\StarLink.dll
+C:\Users\HackJ\Desktop\Server\StarLink.Authentication\bin\Debug\netcoreapp3.1\StarLink.pdb
+C:\Users\HackJ\Desktop\Server\StarLink.Authentication\obj\Debug\netcoreapp3.1\StarLink.Authentication.csproj.AssemblyReference.cache
+C:\Users\HackJ\Desktop\Server\StarLink.Authentication\obj\Debug\netcoreapp3.1\StarLink.Authentication.AssemblyInfoInputs.cache
+C:\Users\HackJ\Desktop\Server\StarLink.Authentication\obj\Debug\netcoreapp3.1\StarLink.Authentication.AssemblyInfo.cs
+C:\Users\HackJ\Desktop\Server\StarLink.Authentication\obj\Debug\netcoreapp3.1\StarLink.Authentication.csproj.CoreCompileInputs.cache
+C:\Users\HackJ\Desktop\Server\StarLink.Authentication\obj\Debug\netcoreapp3.1\StarLink.Authentication.csproj.CopyComplete
+C:\Users\HackJ\Desktop\Server\StarLink.Authentication\obj\Debug\netcoreapp3.1\StarLink.Authentication.dll
+C:\Users\HackJ\Desktop\Server\StarLink.Authentication\obj\Debug\netcoreapp3.1\StarLink.Authentication.pdb

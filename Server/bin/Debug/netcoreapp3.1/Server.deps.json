@@ -1,0 +1,64 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Server/1.0.0": {
+        "dependencies": {
+          "Authentication": "1.0.0",
+          "GameWorld": "1.0.0",
+          "StarLink": "1.0.0"
+        },
+        "runtime": {
+          "Server.dll": {}
+        }
+      },
+      "Authentication/1.0.0": {
+        "dependencies": {
+          "StarLink": "1.0.0"
+        },
+        "runtime": {
+          "Authentication.dll": {}
+        }
+      },
+      "GameWorld/1.0.0": {
+        "dependencies": {
+          "StarLink": "1.0.0"
+        },
+        "runtime": {
+          "GameWorld.dll": {}
+        }
+      },
+      "StarLink/1.0.0": {
+        "runtime": {
+          "StarLink.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Server/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Authentication/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GameWorld/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StarLink/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

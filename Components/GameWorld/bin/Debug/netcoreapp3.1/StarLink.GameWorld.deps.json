@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "StarLink.GameWorld/1.0.0": {
+        "dependencies": {
+          "StarLink": "1.0.0"
+        },
+        "runtime": {
+          "StarLink.GameWorld.dll": {}
+        }
+      },
+      "StarLink/1.0.0": {
+        "runtime": {
+          "StarLink.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "StarLink.GameWorld/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StarLink/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

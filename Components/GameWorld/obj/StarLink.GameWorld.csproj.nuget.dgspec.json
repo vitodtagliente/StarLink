@@ -1,0 +1,118 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\HackJ\\Desktop\\Server\\StarLink.GameWorld\\StarLink.GameWorld.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\HackJ\\Desktop\\Server\\StarLink.GameWorld\\StarLink.GameWorld.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\HackJ\\Desktop\\Server\\StarLink.GameWorld\\StarLink.GameWorld.csproj",
+        "projectName": "StarLink.GameWorld",
+        "projectPath": "C:\\Users\\HackJ\\Desktop\\Server\\StarLink.GameWorld\\StarLink.GameWorld.csproj",
+        "packagesPath": "C:\\Users\\HackJ\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HackJ\\Desktop\\Server\\StarLink.GameWorld\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\HackJ\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\HackJ\\Desktop\\Server\\StarLink\\StarLink.csproj": {
+                "projectPath": "C:\\Users\\HackJ\\Desktop\\Server\\StarLink\\StarLink.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\HackJ\\Desktop\\Server\\StarLink\\StarLink.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\HackJ\\Desktop\\Server\\StarLink\\StarLink.csproj",
+        "projectName": "StarLink",
+        "projectPath": "C:\\Users\\HackJ\\Desktop\\Server\\StarLink\\StarLink.csproj",
+        "packagesPath": "C:\\Users\\HackJ\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HackJ\\Desktop\\Server\\StarLink\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\HackJ\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
