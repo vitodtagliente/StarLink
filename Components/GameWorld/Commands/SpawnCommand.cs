@@ -5,16 +5,32 @@ using StarLink;
 
 namespace GameWorld.Commands
 {
-    [CommandSettings(Id = "Spawn")]
-    class SpawnCommand : Command<SpawnRequest, EmptyCommandResponse>
+    [CommandSettings(Id = "Spawn", RequireResponse = true)]
+    class SpawnCommand : Command<SpawnRequest, SpawnResponse>
     {
-        protected override HttpStatusCode ProcessRequest(UserSession userSession, SpawnRequest request, out EmptyCommandResponse response)
+        public SpawnCommand(WorldManager worldManager)
+            : base()
         {
-            response = new EmptyCommandResponse();
+            _worldManager = worldManager;
+        }
 
+        private WorldManager _worldManager;
 
+        protected override HttpStatusCode ProcessRequest(UserSession userSession, SpawnRequest request, out SpawnResponse response)
+        {
+            response = new SpawnResponse();
 
-            return HttpStatusCode.OK;
+            // TODO: current user world
+            string worldName = "";
+            if (_worldManager.TryGet(worldName, out World world))
+            {
+                if (world.TrySpawn(request.Type, request.Transform, out GameObject spawnedObject))
+                {
+                    response.GameObject = spawnedObject;
+                    return HttpStatusCode.OK;
+                }
+            }
+            return HttpStatusCode.InternalServerError;
         }
     }
 }
