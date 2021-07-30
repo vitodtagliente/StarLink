@@ -14,11 +14,6 @@ namespace Server
             StarServer server = new StarServer(StarProtocol.UDP);
             server.onClientMessage = (UserSession session, StarMessage message) =>
             {
-                if (message.Header.Contains(MessageHeader.HeaderType.Command))
-                {
-                    return;
-                }
-
                 // echo server
                 Console.WriteLine("The client {0} sent the message: {1}", session.User.Id, message.Body);
                 StarMessage response = StarMessage.Create();

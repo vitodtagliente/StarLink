@@ -63,6 +63,8 @@ namespace StarLink
 
         public MessageHeader Header { get; set; }
         public string Body { get; set; }
+
+        public bool IsCommand { get { return Header.Contains(MessageHeader.HeaderType.Command); } }
     }
 
     public static class MessageSerializer

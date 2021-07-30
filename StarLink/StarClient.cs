@@ -19,9 +19,15 @@ namespace StarLink
                 StarMessage message = MessageSerializer.Deserialize(data);
                 if (message != null)
                 {
-                    OnMessage.Invoke(message);
-                    _messageProcessor.Process(message);
-                    _commandProcessor.Process(Session, message);
+                    if(message.IsCommand)
+                    {
+                        _commandProcessor.Process(Session, message);
+                    }
+                    else
+                    {
+                        OnMessage.Invoke(message);
+                        _messageProcessor.Process(message);
+                    }
                 }
             };
             _messageProcessor = new ClientMessageProcessor(_link);
