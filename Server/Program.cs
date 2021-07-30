@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+
 using StarLink;
 
 namespace Server
@@ -25,6 +26,7 @@ namespace Server
                 server.Send(session, response);
             };
             server.Components.Add(new Authentication.ServerComponent(server));
+            server.Components.Add(new GameWorld.ServerComponent(server));
 
             StarClient client = new StarClient(StarProtocol.UDP);
             client.OnMessage = (StarMessage message) =>
@@ -32,6 +34,7 @@ namespace Server
                 Console.WriteLine("The server sent the message: {0}", message.Body);
             };
             client.Components.Add(new Authentication.ClientComponent(client));
+            client.Components.Add(new GameWorld.ClientComponent(client));
 
             if (server != null && client != null)
             {
