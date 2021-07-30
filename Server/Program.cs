@@ -12,7 +12,7 @@ namespace Server
             Console.WriteLine("Hello World!");
 
             StarServer server = new StarServer(StarProtocol.UDP);
-            server.onClientMessage = (UserSession session, StarMessage message) =>
+            server.OnClientMessage = (UserSession session, StarMessage message) =>
             {
                 // echo server
                 Console.WriteLine("The client {0} sent the message: {1}", session.User.Id, message.Body);
@@ -23,10 +23,12 @@ namespace Server
             server.Components.Add(new Authentication.ServerComponent(server));
             server.Components.Add(new GameWorld.ServerComponent(server));
 
-            StarClient client = new StarClient(StarProtocol.UDP);
-            client.OnMessage = (StarMessage message) =>
+            StarClient client = new StarClient(StarProtocol.UDP)
             {
-                Console.WriteLine("The server sent the message: {0}", message.Body);
+                OnMessage = (StarMessage message) =>
+                {
+                    Console.WriteLine("The server sent the message: {0}", message.Body);
+                }
             };
             client.Components.Add(new Authentication.ClientComponent(client));
             client.Components.Add(new GameWorld.ClientComponent(client));

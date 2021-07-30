@@ -11,10 +11,10 @@ namespace StarLink
             _sessionManager = new UserSessionManager();
 
             _link = ServerNetworkLink.Factory(protocol);
-            _link.OnOpen = () => onListening.Invoke();
-            _link.OnError = () => onError.Invoke();
-            _link.OnNodeConnection = (StarNodeId nodeId) => onClientConnection.Invoke(_sessionManager.Create(nodeId));
-            _link.OnNodeDisconnection = (StarNodeId nodeId) => onClientDisconnection.Invoke(_sessionManager.Create(nodeId));
+            _link.OnOpen = () => OnListening.Invoke();
+            _link.OnError = () => OnError.Invoke();
+            _link.OnNodeConnection = (StarNodeId nodeId) => OnClientConnection.Invoke(_sessionManager.Create(nodeId));
+            _link.OnNodeDisconnection = (StarNodeId nodeId) => OnClientDisconnection.Invoke(_sessionManager.Create(nodeId));
             _link.OnNodeMessage = (StarNodeId nodeId, string data) =>
             {
                 UserSession session = _sessionManager.Create(nodeId);
@@ -28,7 +28,7 @@ namespace StarLink
                     }
                     else
                     {
-                        onClientMessage.Invoke(session, message);
+                        OnClientMessage.Invoke(session, message);
                         _messageProcessor.Process(message);
                     }
                 }
@@ -79,10 +79,10 @@ namespace StarLink
         private ServerMessageProcessor _messageProcessor;
         private ServerCommandProcessor _commandProcessor;
 
-        public Action<UserSession> onClientConnection = (UserSession) => { };
-        public Action<UserSession> onClientDisconnection = (UserSession) => { };
-        public Action<UserSession, StarMessage> onClientMessage = (UserSession userSession, StarMessage message) => { };
-        public Action onError = () => { };
-        public Action onListening = () => { };
+        public Action<UserSession> OnClientConnection = (UserSession) => { };
+        public Action<UserSession> OnClientDisconnection = (UserSession) => { };
+        public Action<UserSession, StarMessage> OnClientMessage = (UserSession userSession, StarMessage message) => { };
+        public Action OnError = () => { };
+        public Action OnListening = () => { };
     }
 }
