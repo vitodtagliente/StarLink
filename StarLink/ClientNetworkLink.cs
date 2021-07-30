@@ -2,9 +2,9 @@
 
 namespace StarLink
 {
-    public abstract class ClientStarLink : StarLink
+    abstract class ClientNetworkLink : NetworkLink
     {
-        public ClientStarLink(StarProtocol protocol)
+        public ClientNetworkLink(StarProtocol protocol)
             : base(protocol)
         {
 
@@ -18,12 +18,12 @@ namespace StarLink
 
         public Action<string> OnMessage = (string message) => { };
 
-        public static ClientStarLink Factory(StarProtocol protocol)
+        public static ClientNetworkLink Factory(StarProtocol protocol)
         {
             switch (protocol)
             {
                 case StarProtocol.TCP:
-                case StarProtocol.UDP: return new Links.ClientStarLinkUDP();
+                case StarProtocol.UDP: return new NetworkLinks.ClientLinkUDP();
                 case StarProtocol.WebSockets:
                 default: throw new NotImplementedException();
             }

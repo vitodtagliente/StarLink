@@ -7,11 +7,11 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace StarLink.Links
+namespace StarLink.NetworkLinks
 {
-    class ServerStarLinkWS : ServerStarLink
+    class ServerLinkWS : ServerNetworkLink
     {
-        public ServerStarLinkWS()
+        public ServerLinkWS()
             : base(StarProtocol.WebSockets)
         {
             clients = new Dictionary<StarNodeId, WebSocket>();

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace StarLink.Links
+namespace StarLink.NetworkLinks
 {
-    class ServerStarLinkTCP : ServerStarLink
+    class ServerLinkTCP : ServerNetworkLink
     {
-        public ServerStarLinkTCP()
+        public ServerLinkTCP()
                : base(StarProtocol.TCP)
         {
 

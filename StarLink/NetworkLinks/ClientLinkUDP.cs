@@ -4,11 +4,11 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StarLink.Links
+namespace StarLink.NetworkLinks
 {
-    class ClientStarLinkUDP : ClientStarLink
+    class ClientLinkUDP : ClientNetworkLink
     {
-        public ClientStarLinkUDP()
+        public ClientLinkUDP()
             : base(StarProtocol.UDP)
         {
             _socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);

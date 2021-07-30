@@ -2,9 +2,9 @@
 
 namespace StarLink
 {
-    public abstract class ServerStarLink : StarLink
+    abstract class ServerNetworkLink : NetworkLink
     {
-        public ServerStarLink(StarProtocol protocol)
+        public ServerNetworkLink(StarProtocol protocol)
             : base(protocol)
         {
 
@@ -20,13 +20,13 @@ namespace StarLink
         public Action<StarNodeId> OnNodeDisconnection = (NetworkNodeId) => { };
         public Action<StarNodeId, string> OnNodeMessage = (StarNodeId nodeId, string message) => { };
 
-        public static ServerStarLink Factory(StarProtocol protocol)
+        public static ServerNetworkLink Factory(StarProtocol protocol)
         {
             switch (protocol)
             {
-                case StarProtocol.TCP: return new Links.ServerStarLinkTCP();
-                case StarProtocol.UDP: return new Links.ServerStarLinkUDP();
-                case StarProtocol.WebSockets: return new Links.ServerStarLinkWS();
+                case StarProtocol.TCP: return new NetworkLinks.ServerLinkTCP();
+                case StarProtocol.UDP: return new NetworkLinks.ServerLinkUDP();
+                case StarProtocol.WebSockets: return new NetworkLinks.ServerLinkWS();
                 default: throw new NotImplementedException();
             }
         }

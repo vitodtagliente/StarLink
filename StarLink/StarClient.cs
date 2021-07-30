@@ -10,7 +10,7 @@ namespace StarLink
             Session = new UserSession();
             Components = new ComponentRegister<ClientComponent>();
 
-            _link = ClientStarLink.Factory(protocol);
+            _link = ClientNetworkLink.Factory(protocol);
             _link.OnOpen = () => OnConnection.Invoke();
             _link.OnError = () => OnError.Invoke();
             _link.OnClose = () => OnDisconnection.Invoke();
@@ -72,7 +72,7 @@ namespace StarLink
         public CommandRegister Commands { get { return _commandProcessor.Commands; } }
         public ComponentRegister<ClientComponent> Components { get; private set; }
 
-        private ClientStarLink _link;
+        private ClientNetworkLink _link;
         private ClientMessageProcessor _messageProcessor;
         private ClientCommandProcessor _commandProcessor;
 

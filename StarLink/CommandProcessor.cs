@@ -7,7 +7,7 @@ namespace StarLink
 {
     abstract class CommandProcessor
     {
-        public CommandProcessor(StarLink link)
+        public CommandProcessor(NetworkLink link)
         {
             Commands = new CommandRegister();
             _link = link;
@@ -16,7 +16,7 @@ namespace StarLink
 
         public CommandRegister Commands { get; private set; }
 
-        protected StarLink _link;
+        protected NetworkLink _link;
         private ConcurrentDictionary<StarId, TaskCompletionSource<StarMessage>> _requests;
 
         protected HttpStatusCode Call<RequestType, ResponseType>(string commandId, RequestType request, out ResponseType response, Action<StarMessage> sendAction, int timeout = 20000000 /* 20s */)
@@ -100,7 +100,7 @@ namespace StarLink
 
     sealed class ClientCommandProcessor : CommandProcessor
     {
-        public ClientCommandProcessor(StarLink link)
+        public ClientCommandProcessor(NetworkLink link)
             : base(link)
         {
 
@@ -137,7 +137,7 @@ namespace StarLink
 
     sealed class ServerCommandProcessor : CommandProcessor
     {
-        public ServerCommandProcessor(StarLink link)
+        public ServerCommandProcessor(NetworkLink link)
             : base(link)
         {
 

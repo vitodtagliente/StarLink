@@ -5,7 +5,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StarLink.Links
+namespace StarLink.NetworkLinks
 {
     static class IPEndPointExtension
     {
@@ -15,9 +15,9 @@ namespace StarLink.Links
         }
     }
 
-    class ServerStarLinkUDP : ServerStarLink
+    class ServerLinkUDP : ServerNetworkLink
     {
-        public ServerStarLinkUDP()
+        public ServerLinkUDP()
             : base(StarProtocol.UDP)
         {
             TimedDictionarySettings settings = new TimedDictionarySettings

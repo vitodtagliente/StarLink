@@ -2,7 +2,7 @@
 
 namespace StarLink
 {
-    public abstract class StarLink
+    abstract class NetworkLink
     {
         public enum LinkState
         {
@@ -12,7 +12,7 @@ namespace StarLink
             Ready
         }
 
-        public StarLink(StarProtocol protocol)
+        public NetworkLink(StarProtocol protocol)
         {
             Protocol = protocol;
             State = LinkState.Ready;

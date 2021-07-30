@@ -7,13 +7,13 @@ namespace StarLink
 {
     abstract class MessageProcessor
     {
-        public MessageProcessor(StarLink link)
+        public MessageProcessor(NetworkLink link)
         {
             _link = link;
             _requests = new ConcurrentDictionary<StarId, TaskCompletionSource<StarMessage>>();
         }
 
-        protected StarLink _link;
+        protected NetworkLink _link;
         private ConcurrentDictionary<StarId, TaskCompletionSource<StarMessage>> _requests;
 
         protected HttpStatusCode Send(StarMessage request, out StarMessage response, Action<StarMessage> sendAction, int timeout = 20000000 /* 20s */)
@@ -65,7 +65,7 @@ namespace StarLink
 
     sealed class ClientMessageProcessor : MessageProcessor
     {
-        public ClientMessageProcessor(StarLink link)
+        public ClientMessageProcessor(NetworkLink link)
             : base(link)
         {
 
@@ -88,7 +88,7 @@ namespace StarLink
 
     sealed class ServerMessageProcessor : MessageProcessor
     {
-        public ServerMessageProcessor(StarLink link)
+        public ServerMessageProcessor(NetworkLink link)
             : base(link)
         {
 
