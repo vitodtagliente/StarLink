@@ -1,8 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GameWorld
 {
-
+    [Serializable]
+    public class SpawnResponse
+    {
+        public GameObject GameObject { get; set; }
+    }
 }

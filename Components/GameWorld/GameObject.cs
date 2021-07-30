@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 using StarLink;
 
@@ -10,5 +8,8 @@ namespace GameWorld
     public class GameObject
     {
         public StarId Id { get; set; }
+        public User UserController { get; set; }
+
+        public bool IsUserControlled { get { return UserController != null; } }
     }
 }

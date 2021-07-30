@@ -13,10 +13,10 @@ namespace GameWorld
         {
         }
 
-        // public HttpStatusCode Authenticate(AuthenticationRequest request)
-        // {
-        //     return Call(BaseCommand.CommandId<Commands.AuthenticationCommand>(), request);
-        // }
+        public HttpStatusCode Spawn(SpawnRequest request)
+        {
+            return Call(BaseCommand.CommandId<Commands.SpawnCommand>(), request);
+        }
 
         protected override void RegisterCommands()
         {

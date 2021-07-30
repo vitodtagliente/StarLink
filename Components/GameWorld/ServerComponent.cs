@@ -17,7 +17,7 @@ namespace GameWorld
 
         protected override void RegisterCommands()
         {
-            // _server.Commands.Add<Commands.AuthenticationCommand>();
+            _server.Commands.Add<Commands.SpawnCommand>();
         }
     }
 }
