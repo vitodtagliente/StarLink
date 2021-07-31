@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GameWorld.Commands
 {
-    class TravelCommand
+    public class TravelCommand
     {
     }
 }

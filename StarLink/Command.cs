@@ -42,18 +42,22 @@ namespace StarLink
     }
 
     [CommandSettings]
-    public abstract class Command<Req, Res> : BaseCommand
-        where Req : new()
-        where Res : new()
+    public abstract class Command<ComponentT, RequestT, ResponseT> : BaseCommand
+        where ComponentT : Component
+        where RequestT : new()
+        where ResponseT : new()
     {
-        public Command()
+        public Command(ComponentT component)
             : base()
         {
-
+            _component = component;
         }
 
-        public Type RequestType { get { return typeof(Req); } }
-        public Type ResponseType { get { return typeof(Res); } }
+        protected ComponentT _component { get; private set; }
+
+        public Type ComponentType { get { return typeof(ComponentT); } }
+        public Type RequestType { get { return typeof(RequestT); } }
+        public Type ResponseType { get { return typeof(ResponseT); } }
 
         public override HttpStatusCode Execute(UserSession userSession, StarMessage requestMessage, out StarMessage responseMessage)
         {
@@ -69,21 +73,21 @@ namespace StarLink
                 return HttpStatusCode.Unauthorized;
             }
 
-            Req request = JsonSerializer.Deserialize<Req>(requestMessage.Body);
+            RequestT request = JsonSerializer.Deserialize<RequestT>(requestMessage.Body);
             if (request == null)
             {
                 Console.WriteLine("Failed to parse the request[{0}]", requestMessage.Body);
                 return HttpStatusCode.BadRequest;
             }
 
-            HttpStatusCode error = ProcessRequest(userSession, request, out Res response);
+            HttpStatusCode error = ProcessRequest(userSession, request, out ResponseT response);
             responseMessage.Header.Set(MessageHeader.HeaderType.Command, Id);
-            responseMessage.Header.Set(MessageHeader.HeaderType.StatusCode, error); 
+            responseMessage.Header.Set(MessageHeader.HeaderType.StatusCode, error);
             responseMessage.Body = JsonSerializer.Serialize(response);
 
             return HttpStatusCode.OK;
         }
 
-        protected abstract HttpStatusCode ProcessRequest(UserSession userSession, Req request, out Res response);
+        protected abstract HttpStatusCode ProcessRequest(UserSession userSession, RequestT request, out ResponseT response);
     }
 }

@@ -6,8 +6,12 @@ using StarLink;
 namespace Authentication.Commands
 {
     [CommandSettings(Id = "Auth")]
-    class AuthenticationCommand : Command<AuthenticationRequest, AuthenticationResponse>
+    class AuthenticationCommand : Command<ServerComponent, AuthenticationRequest, AuthenticationResponse>
     {
+        public AuthenticationCommand(ServerComponent component) : base(component)
+        {
+        }
+
         protected override HttpStatusCode ProcessRequest(UserSession userSession, AuthenticationRequest request, out AuthenticationResponse response)
         {
             response = new AuthenticationResponse()

@@ -12,12 +12,15 @@ namespace GameWorld
         public ServerComponent(StarServer server)
             : base(server)
         {
+            _worldManager = new WorldManager();
         }
+
+        private WorldManager _worldManager;
 
 
         protected override void RegisterCommands()
         {
-            // _server.Commands.Add<Commands.SpawnCommand>();
+            _server.Commands.Add(new Commands.SpawnCommand(this, _worldManager));
         }
     }
 }

@@ -6,10 +6,10 @@ using StarLink;
 namespace GameWorld.Commands
 {
     [CommandSettings(Id = "Spawn")]
-    class SpawnCommand : Command<SpawnRequest, SpawnResponse>
+    class SpawnCommand : Command<ServerComponent, SpawnRequest, SpawnResponse>
     {
-        public SpawnCommand(WorldManager worldManager)
-            : base()
+        public SpawnCommand(ServerComponent component, WorldManager worldManager)
+            : base(component)
         {
             _worldManager = worldManager;
         }
