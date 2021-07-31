@@ -11,9 +11,9 @@ namespace Authentication
         {
         }
 
-        public HttpStatusCode Authenticate(AuthenticationRequest request)
+        public HttpStatusCode Authenticate(AuthenticationRequest request, out AuthenticationResponse response)
         {
-            return Call(BaseCommand.CommandId<Commands.AuthenticationCommand>(), request);
+            return Call(BaseCommand.CommandId<Commands.AuthenticationCommand>(), request, out response);
         }
 
         protected override void RegisterCommands()

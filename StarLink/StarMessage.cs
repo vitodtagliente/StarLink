@@ -32,6 +32,17 @@ namespace StarLink
         public bool Contains(HeaderType header) { return Contains(header.GetDescription()); }
         public string Get(string header) { return Fields.ContainsKey(header) ? Fields[header] : string.Empty; }
         public string Get(HeaderType header) { return Get(header.GetDescription()); }
+        public bool TryGet(string header, out string value)
+        {
+            value = string.Empty;
+            if (Fields.ContainsKey(header))
+            {
+                value = Fields[header];
+                return true;
+            }
+            return false;
+        }
+        public bool TryGet(HeaderType header, out string value) { return TryGet(header.GetDescription(), out value); }
         public void Set(string header, string value) { Fields[header] = value; }
         public void Set(HeaderType header, string value) { Set(header.GetDescription(), value); }
         public void Set<T>(string header, T value) { Set(header, value.ToString()); }

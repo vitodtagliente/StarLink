@@ -50,7 +50,8 @@ namespace Server
                     error = authComponent.Authenticate(new Authentication.AuthenticationRequest()
                     {
                         Username = "Vito"
-                    });
+                    }, out Authentication.AuthenticationResponse response);
+                    Console.WriteLine(response.Foo);
                 }
 
                 Console.ReadKey(true);

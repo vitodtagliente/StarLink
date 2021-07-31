@@ -6,11 +6,14 @@ using StarLink;
 namespace Authentication.Commands
 {
     [CommandSettings(Id = "Auth")]
-    class AuthenticationCommand : Command<AuthenticationRequest, EmptyCommandResponse>
+    class AuthenticationCommand : Command<AuthenticationRequest, AuthenticationResponse>
     {
-        protected override HttpStatusCode ProcessRequest(UserSession userSession, AuthenticationRequest request, out EmptyCommandResponse response)
+        protected override HttpStatusCode ProcessRequest(UserSession userSession, AuthenticationRequest request, out AuthenticationResponse response)
         {
-            response = new EmptyCommandResponse();
+            response = new AuthenticationResponse()
+            {
+                Foo = "potere"
+            };
             userSession.IsAuthenticated = true;
             userSession.User.State.Name = request.Username;
 

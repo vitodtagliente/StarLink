@@ -5,7 +5,7 @@ using StarLink;
 
 namespace GameWorld.Commands
 {
-    [CommandSettings(Id = "Spawn", RequireResponse = true)]
+    [CommandSettings(Id = "Spawn")]
     class SpawnCommand : Command<SpawnRequest, SpawnResponse>
     {
         public SpawnCommand(WorldManager worldManager)

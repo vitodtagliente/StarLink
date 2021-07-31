@@ -43,7 +43,13 @@ namespace StarLink
                     // The response has been received.
                     StarMessage responseMessage = task.Result;
                     response = StarSerializer.Deserialize<ResponseType>(responseMessage.Body);
-                    return HttpStatusCode.OK;
+                    if (responseMessage.Header.TryGet(MessageHeader.HeaderType.StatusCode, out string statusCode)
+                        && !string.IsNullOrEmpty(statusCode))
+                    {
+                        return (HttpStatusCode)int.Parse(statusCode);
+                    }
+                    // cannot determine the status code
+                    return HttpStatusCode.FailedDependency;
                 }
                 else // Timeout response.
                 {
@@ -79,14 +85,17 @@ namespace StarLink
                 else
                 {
                     // handle requests execution
-                    BaseCommand command;
-                    if (Commands.TryGet(commandId, out command))
+                    if (Commands.TryGet(commandId, out BaseCommand command))
                     {
                         StarMessage response;
-                        if (command.Execute(session, message, out response) == HttpStatusCode.OK
-                            && command.Settings.RequireResponse)
+                        HttpStatusCode error = command.Execute(session, message, out response);
+                        if (error == HttpStatusCode.OK)
                         {
                             sendAction.Invoke(response);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Failed to execute the command {0} with error {1}", commandId, error);
                         }
                     }
                     else

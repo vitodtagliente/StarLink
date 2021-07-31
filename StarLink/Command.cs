@@ -11,7 +11,6 @@ namespace StarLink
     {
         public string Id = string.Empty;
         public bool RequireAuthentication = false;
-        public bool RequireResponse = false;
         public bool Reliable = false;
     }
 
@@ -79,12 +78,10 @@ namespace StarLink
 
             HttpStatusCode error = ProcessRequest(userSession, request, out Res response);
             responseMessage.Header.Set(MessageHeader.HeaderType.Command, Id);
-            responseMessage.Header.Set(MessageHeader.HeaderType.StatusCode, error);
-            if (error == HttpStatusCode.OK)
-            {
-                responseMessage.Body = JsonSerializer.Serialize(response);
-            }
-            return error;
+            responseMessage.Header.Set(MessageHeader.HeaderType.StatusCode, error); 
+            responseMessage.Body = JsonSerializer.Serialize(response);
+
+            return HttpStatusCode.OK;
         }
 
         protected abstract HttpStatusCode ProcessRequest(UserSession userSession, Req request, out Res response);
