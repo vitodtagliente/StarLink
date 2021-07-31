@@ -46,7 +46,7 @@ namespace StarLink
                     if (responseMessage.Header.TryGet(MessageHeader.HeaderType.StatusCode, out string statusCode)
                         && !string.IsNullOrEmpty(statusCode))
                     {
-                        return (HttpStatusCode)int.Parse(statusCode);
+                        return Enum.Parse<HttpStatusCode>(statusCode);
                     }
                     // cannot determine the status code
                     return HttpStatusCode.FailedDependency;
