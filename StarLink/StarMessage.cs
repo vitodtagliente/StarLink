@@ -82,7 +82,7 @@ namespace StarLink
     {
         public static string Serialize(StarMessage message)
         {
-            return StarSerializer.Serialize<StarMessage>(message);
+            return StarSerializer.Serialize(message);
         }
 
         public static StarMessage Deserialize(string message)

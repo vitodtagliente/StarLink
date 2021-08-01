@@ -1,19 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.ComponentModel;
 using StarLink;
 
 namespace GameWorld
 {
-    enum UserWorldDataType
+    enum UserDataType
     {
         [Description("World")] World
     }
 
     static class UserWorldDataTypeExtension
     {
-        public static string GetDescription(this UserWorldDataType header)
+        public static string GetDescription(this UserDataType header)
         {
             DescriptionAttribute[] attributes = (DescriptionAttribute[])header
                .GetType()
@@ -25,9 +23,20 @@ namespace GameWorld
 
     static class UserStateExtension
     {
-        public static void SetWorld(this UserState userState)
+        public static void SetWorld(this UserState userState, string world)
         {
+            userState.Data.Add(UserDataType.World.GetDescription(), world);
+        }
 
+        public static bool TryGetWorld(this UserState userState, out string world)
+        {
+            world = string.Empty;
+            if (userState.Data.ContainsKey(UserDataType.World.GetDescription()))
+            {
+                world = userState.Data[UserDataType.World.GetDescription()];
+                return true;
+            }
+            return false;
         }
     }
 }
