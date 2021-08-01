@@ -16,9 +16,9 @@ namespace Authentication
             HttpStatusCode error = Call(BaseCommand.CommandId<Commands.AuthenticationCommand>(), request, out response);
             if (error == HttpStatusCode.OK)
             {
-                Client.Session.IsAuthenticated = response.Session.IsAuthenticated;
-                Client.Session.Data = response.Session.Data;
-                Client.Session.User = response.Session.User;
+                _client.Session.IsAuthenticated = response.Session.IsAuthenticated;
+                _client.Session.Data = response.Session.Data;
+                _client.Session.User = response.Session.User;
             }
             return error;
         }

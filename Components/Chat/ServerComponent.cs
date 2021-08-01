@@ -17,8 +17,8 @@ namespace Chat
 
         protected override void RegisterCommands()
         {
-            Server.Commands.Add(new Commands.PrivateMessageCommand(this));
-            Server.Commands.Add(new Commands.PublicMessageCommand(this));
+            _server.Commands.Add(new Commands.PrivateMessageCommand(this));
+            _server.Commands.Add(new Commands.PublicMessageCommand(this));
         }
     }
 }

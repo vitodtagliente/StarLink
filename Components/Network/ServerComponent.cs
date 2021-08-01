@@ -18,7 +18,7 @@ namespace Network
 
         protected override void RegisterCommands()
         {
-            Server.Commands.Add(new Commands.PingCommand(this));
+            _server.Commands.Add(new Commands.PingCommand(this));
         }
     }
 }
