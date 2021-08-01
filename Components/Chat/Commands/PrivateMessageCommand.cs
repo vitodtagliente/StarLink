@@ -20,11 +20,17 @@ namespace Chat.Commands
 
             if (string.IsNullOrEmpty(request.Message))
             {
-                Console.WriteLine("Chat messages cannot be empty,message {0}", request.Message);
+                Console.WriteLine("Chat messages cannot be empty, message {0}", request.Message);
                 return HttpStatusCode.BadRequest;
             }
 
-            // broadcast it
+            if (request.User == StarId.Empty)
+            {
+                Console.WriteLine("Chat messages cannot have invalid user, user {0}", request.User);
+                return HttpStatusCode.BadRequest;
+            }
+
+            // _component.Server.Call()
 
             return HttpStatusCode.OK;
         }

@@ -13,7 +13,7 @@ namespace Authentication
 
         protected override void RegisterCommands()
         {
-            _server.Commands.Add(new Commands.AuthenticationCommand(this));
+            Server.Commands.Add(new Commands.AuthenticationCommand(this));
         }
     }
 }

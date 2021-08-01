@@ -42,23 +42,23 @@ namespace StarLink
         public ClientComponent(StarClient client)
             : base()
         {
-            _client = client;
+            Client = client;
         }
 
         protected HttpStatusCode Call<RequestType>(string commandId, RequestType request)
             where RequestType : new()
         {
-            return _client.Call(commandId, request);
+            return Client.Call(commandId, request);
         }
 
         protected HttpStatusCode Call<RequestType, ResponseType>(string commandId, RequestType request, out ResponseType response, int timeout = 20000000 /* 20s */)
             where RequestType : new()
             where ResponseType : new()
         {
-            return _client.Call(commandId, request, out response, timeout);
+            return Client.Call(commandId, request, out response, timeout);
         }
 
-        protected StarClient _client { get; private set; }
+        public StarClient Client { get; private set; }
     }
 
     [ComponentSettings]
@@ -67,22 +67,22 @@ namespace StarLink
         public ServerComponent(StarServer server)
                : base()
         {
-            _server = server;
+            Server = server;
         }
 
         protected HttpStatusCode Call<RequestType>(StarNodeId nodeId, string commandId, RequestType request)
             where RequestType : new()
         {
-            return _server.Call(nodeId, commandId, request);
+            return Server.Call(nodeId, commandId, request);
         }
 
         protected HttpStatusCode Call<RequestType, ResponseType>(StarNodeId nodeId, string commandId, RequestType request, out ResponseType response, int timeout = 20000000 /* 20s */)
             where RequestType : new()
             where ResponseType : new()
         {
-            return _server.Call(nodeId, commandId, request, out response, timeout);
+            return Server.Call(nodeId, commandId, request, out response, timeout);
         }
 
-        protected StarServer _server { get; private set; }
+        public StarServer Server { get; private set; }
     }
 }

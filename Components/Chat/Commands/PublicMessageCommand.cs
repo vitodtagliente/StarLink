@@ -24,7 +24,7 @@ namespace Chat.Commands
                 return HttpStatusCode.BadRequest;
             }
 
-            // broadcast it
+            // broadcast
 
             return HttpStatusCode.OK;
         }

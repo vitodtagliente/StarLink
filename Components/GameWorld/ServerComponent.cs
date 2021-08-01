@@ -20,8 +20,8 @@ namespace GameWorld
 
         protected override void RegisterCommands()
         {
-            _server.Commands.Add(new Commands.HandShakeCommand(this, _worldManager));
-            _server.Commands.Add(new Commands.SpawnCommand(this, _worldManager));
+            Server.Commands.Add(new Commands.HandShakeCommand(this, _worldManager));
+            Server.Commands.Add(new Commands.SpawnCommand(this, _worldManager));
         }
     }
 }
