@@ -21,6 +21,7 @@ namespace Server
                 server.Send(session, response);
             };
             server.Components.Add(new Authentication.ServerComponent(server));
+            server.Components.Add(new Chat.ServerComponent(server));
             server.Components.Add(new GameWorld.ServerComponent(server));
             server.Components.Add(new Network.ServerComponent(server));
 
@@ -32,6 +33,7 @@ namespace Server
                 }
             };
             client.Components.Add(new Authentication.ClientComponent(client));
+            client.Components.Add(new Chat.ClientComponent(client));
             client.Components.Add(new GameWorld.ClientComponent(client));
             client.Components.Add(new Network.ClientComponent(client));
 

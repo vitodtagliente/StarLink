@@ -4,5 +4,9 @@ using System.Text;
 
 namespace Chat
 {
-
+    [Serializable]
+    class WriteRequest
+    {
+        public string Message { get; set; }
+    }
 }

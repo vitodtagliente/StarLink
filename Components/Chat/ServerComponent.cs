@@ -18,7 +18,7 @@ namespace Chat
 
         protected override void RegisterCommands()
         {
-            // _server.Commands.Add(new Commands.PingCommand(this));
+            _server.Commands.Add(new Commands.WriteCommand(this));
         }
     }
 }
