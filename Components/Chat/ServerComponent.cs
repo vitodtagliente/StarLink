@@ -15,10 +15,10 @@ namespace Chat
 
         }
 
-
         protected override void RegisterCommands()
         {
-            _server.Commands.Add(new Commands.WriteCommand(this));
+            _server.Commands.Add(new Commands.PrivateMessageCommand(this));
+            _server.Commands.Add(new Commands.PublicMessageCommand(this));
         }
     }
 }

@@ -1,12 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using StarLink;
 
 namespace Chat
 {
     [Serializable]
-    class WriteRequest
+    class PublicMessageRequest
     {
+        public string Message { get; set; }
+    }
+
+    [Serializable]
+    class PrivateMessageRequest
+    {
+        public StarId User { get; set; }
         public string Message { get; set; }
     }
 }
