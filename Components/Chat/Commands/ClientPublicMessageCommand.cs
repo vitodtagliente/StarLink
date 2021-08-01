@@ -6,15 +6,15 @@ using StarLink;
 namespace Chat.Commands
 {
     [CommandSettings(Id = "PublicMessage")]
-    class PublicMessageCommand : Command<ServerComponent, PublicMessageRequest, EmptyCommandData>
+    class ClientPublicMessageCommand : Command<ClientComponent, ClientPublicMessageRequest, EmptyCommandData>
     {
-        public PublicMessageCommand(ServerComponent component)
+        public ClientPublicMessageCommand(ClientComponent component)
             : base(component)
         {
 
         }
 
-        protected override HttpStatusCode ProcessRequest(UserSession userSession, PublicMessageRequest request, out EmptyCommandData response)
+        protected override HttpStatusCode ProcessRequest(UserSession userSession, ClientPublicMessageRequest request, out EmptyCommandData response)
         {
             response = new EmptyCommandData();
 
@@ -24,7 +24,7 @@ namespace Chat.Commands
                 return HttpStatusCode.BadRequest;
             }
 
-            // broadcast
+            _component.OnPublicMessage.Invoke(request.Message);
 
             return HttpStatusCode.OK;
         }

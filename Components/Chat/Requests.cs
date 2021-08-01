@@ -4,13 +4,26 @@ using StarLink;
 namespace Chat
 {
     [Serializable]
-    class PublicMessageRequest
+    class ServerPublicMessageRequest
     {
         public string Message { get; set; }
     }
 
     [Serializable]
-    class PrivateMessageRequest
+    class ServerPrivateMessageRequest
+    {
+        public StarId User { get; set; }
+        public string Message { get; set; }
+    }
+
+    [Serializable]
+    class ClientPublicMessageRequest
+    {
+        public string Message { get; set; }
+    }
+
+    [Serializable]
+    class ClientPrivateMessageRequest
     {
         public StarId User { get; set; }
         public string Message { get; set; }

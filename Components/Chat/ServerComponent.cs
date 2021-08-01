@@ -15,10 +15,26 @@ namespace Chat
 
         }
 
+        public void Send(string message)
+        {
+            // return _server.Call(BaseCommand.CommandId<Commands.ClientPublicMessageCommand>(), new ClientPublicMessageRequest()
+            // {
+            //     Message = message
+            // });
+        }
+
+        public void Send(StarId user, string message)
+        {
+            // return _server.Call(BaseCommand.CommandId<Commands.ClientPrivateMessageCommand>(), new ClientPrivateMessageRequest()
+            // {
+            //     Message = message
+            // });
+        }
+
         protected override void RegisterCommands()
         {
-            _server.Commands.Add(new Commands.PrivateMessageCommand(this));
-            _server.Commands.Add(new Commands.PublicMessageCommand(this));
+            _server.Commands.Add(new Commands.ServerPrivateMessageCommand(this));
+            _server.Commands.Add(new Commands.ServerPublicMessageCommand(this));
         }
     }
 }

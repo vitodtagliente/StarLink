@@ -15,7 +15,7 @@ namespace Chat
 
         public HttpStatusCode Send(string message)
         {
-            return _client.Call(BaseCommand.CommandId<Commands.PublicMessageCommand>(), new PublicMessageRequest()
+            return _client.Call(BaseCommand.CommandId<Commands.ServerPublicMessageCommand>(), new ServerPublicMessageRequest()
             {
                 Message = message
             });
@@ -23,7 +23,7 @@ namespace Chat
 
         public HttpStatusCode Send(StarId user, string message)
         {
-            return _client.Call(BaseCommand.CommandId<Commands.PrivateMessageCommand>(), new PrivateMessageRequest()
+            return _client.Call(BaseCommand.CommandId<Commands.ServerPrivateMessageCommand>(), new ServerPrivateMessageRequest()
             {
                 User = user,
                 Message = message
@@ -32,7 +32,8 @@ namespace Chat
 
         protected override void RegisterCommands()
         {
-
+            _client.Commands.Add(new Commands.ClientPrivateMessageCommand(this));
+            _client.Commands.Add(new Commands.ClientPublicMessageCommand(this));
         }
 
         public Action<StarId, string> OnPrivateMessage = (StarId user, string message) => { };
