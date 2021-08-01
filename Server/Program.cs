@@ -53,7 +53,6 @@ namespace Server
                     {
                         Username = "Vito"
                     }, out Authentication.AuthenticationResponse response);
-                    Console.WriteLine(response.Foo);
                 }
 
                 if (client.Components.TryGet(out Network.ClientComponent netComponent))

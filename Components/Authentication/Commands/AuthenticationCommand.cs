@@ -13,13 +13,13 @@ namespace Authentication.Commands
         }
 
         protected override HttpStatusCode ProcessRequest(UserSession userSession, AuthenticationRequest request, out AuthenticationResponse response)
-        {
-            response = new AuthenticationResponse()
-            {
-                Foo = "potere"
-            };
+        {            
             userSession.IsAuthenticated = true;
             userSession.User.State.Name = request.Username;
+            response = new AuthenticationResponse()
+            {
+                Session = userSession
+            };
 
             Console.WriteLine("User {0} authenticated as {1}", userSession.User.Id, request.Username);
 

@@ -1,10 +1,11 @@
 ﻿using System;
+using StarLink;
 
 namespace Authentication
 {
     [Serializable]
     public class AuthenticationResponse
     {
-        public string Foo { get; set; }
+        public UserSession Session { get; set; }
     }
 }
