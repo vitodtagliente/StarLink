@@ -36,7 +36,7 @@ namespace StarLink
     }
 
     [Serializable]
-    public class EmptyCommandResponse
+    public class EmptyCommandData
     {
 
     }

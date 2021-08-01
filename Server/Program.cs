@@ -22,6 +22,7 @@ namespace Server
             };
             server.Components.Add(new Authentication.ServerComponent(server));
             server.Components.Add(new GameWorld.ServerComponent(server));
+            server.Components.Add(new Network.ServerComponent(server));
 
             StarClient client = new StarClient(StarProtocol.UDP)
             {
@@ -32,6 +33,7 @@ namespace Server
             };
             client.Components.Add(new Authentication.ClientComponent(client));
             client.Components.Add(new GameWorld.ClientComponent(client));
+            client.Components.Add(new Network.ClientComponent(client));
 
             if (server != null && client != null)
             {
@@ -52,6 +54,12 @@ namespace Server
                         Username = "Vito"
                     }, out Authentication.AuthenticationResponse response);
                     Console.WriteLine(response.Foo);
+                }
+
+                if (client.Components.TryGet(out Network.ClientComponent netComponent))
+                {
+                    netComponent.Ping(out int ping);
+                    Console.WriteLine("Ping {0}ms", ping);
                 }
 
                 Console.ReadKey(true);

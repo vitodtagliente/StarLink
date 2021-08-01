@@ -13,6 +13,11 @@ namespace GameWorld
         {
         }
 
+        public HttpStatusCode HandShake(out HandShakeResponse response)
+        {
+            return Call(BaseCommand.CommandId<Commands.HandShakeCommand>(), new EmptyCommandData(), out response);
+        }
+
         public HttpStatusCode Spawn(SpawnRequest request)
         {
             return Call(BaseCommand.CommandId<Commands.SpawnCommand>(), request);

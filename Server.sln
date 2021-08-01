@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authentication", "Component
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameWorld", "Components\GameWorld\GameWorld.csproj", "{8B97BA7B-B655-4F93-9CA9-9FA2D6028543}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Network", "Components\Network\Network.csproj", "{2672FFC4-E0A1-4837-8D48-CF23849D89BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{8B97BA7B-B655-4F93-9CA9-9FA2D6028543}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B97BA7B-B655-4F93-9CA9-9FA2D6028543}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B97BA7B-B655-4F93-9CA9-9FA2D6028543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2672FFC4-E0A1-4837-8D48-CF23849D89BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2672FFC4-E0A1-4837-8D48-CF23849D89BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2672FFC4-E0A1-4837-8D48-CF23849D89BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2672FFC4-E0A1-4837-8D48-CF23849D89BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +48,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{99724893-CB6C-4F40-B960-5323B1A301F4} = {DADCE98D-3F3D-4A92-95B5-10939BDB54DF}
 		{8B97BA7B-B655-4F93-9CA9-9FA2D6028543} = {DADCE98D-3F3D-4A92-95B5-10939BDB54DF}
+		{2672FFC4-E0A1-4837-8D48-CF23849D89BA} = {DADCE98D-3F3D-4A92-95B5-10939BDB54DF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8BF63A00-F066-4BC2-809F-43838B0DE52D}

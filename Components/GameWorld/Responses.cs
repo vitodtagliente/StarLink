@@ -7,4 +7,10 @@ namespace GameWorld
     {
         public GameObject GameObject { get; set; }
     }
+
+    [Serializable]
+    public class HandShakeResponse
+    {
+
+    }
 }
