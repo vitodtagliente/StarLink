@@ -19,6 +19,7 @@ namespace Chat
     [Serializable]
     class ClientPublicMessageRequest
     {
+        public string Username { get; set; }
         public string Message { get; set; }
     }
 

@@ -24,7 +24,7 @@ namespace Chat.Commands
                 return HttpStatusCode.BadRequest;
             }
 
-            _component.OnPublicMessage.Invoke(request.Message);
+            _component.OnPublicMessage.Invoke(request.Username, request.Message);
 
             return HttpStatusCode.OK;
         }

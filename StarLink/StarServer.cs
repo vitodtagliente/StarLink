@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 
 namespace StarLink
@@ -36,6 +37,8 @@ namespace StarLink
             _messageProcessor = new ServerMessageProcessor(_link);
             _commandProcessor = new ServerCommandProcessor(_link);
         }
+
+        public List<StarNodeId> Clients { get { return _link?.Clients; } }
 
         public void Listen(int port)
         {

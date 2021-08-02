@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace StarLink
 {
@@ -7,7 +8,7 @@ namespace StarLink
         public ServerNetworkLink(StarProtocol protocol)
             : base(protocol)
         {
-
+            Clients = new List<StarNodeId>();
         }
 
         public override void Open(StarEndpoint address)
@@ -15,6 +16,8 @@ namespace StarLink
             Listen(address.Port);
         }
         public abstract void Listen(int port);
+
+        public List<StarNodeId> Clients { get; protected set; }
 
         public Action<StarNodeId> OnNodeConnection = (NetworkNodeId) => { };
         public Action<StarNodeId> OnNodeDisconnection = (NetworkNodeId) => { };

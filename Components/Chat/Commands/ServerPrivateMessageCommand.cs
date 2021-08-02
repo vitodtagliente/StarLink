@@ -30,7 +30,7 @@ namespace Chat.Commands
                 return HttpStatusCode.BadRequest;
             }
 
-            _component.Send(request.User, request.Message);
+            // _component.Send(request.User, request.Message);
 
             return HttpStatusCode.OK;
         }

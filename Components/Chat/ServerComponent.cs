@@ -15,20 +15,24 @@ namespace Chat
 
         }
 
-        public void Send(string message)
+        public void Send(string username, string message)
         {
-            // return _server.Call(BaseCommand.CommandId<Commands.ClientPublicMessageCommand>(), new ClientPublicMessageRequest()
-            // {
-            //     Message = message
-            // });
+            foreach (StarNodeId nodeId in _server.Clients)
+            {
+                _server.Call(nodeId, BaseCommand.CommandId<Commands.ClientPublicMessageCommand>(), new ClientPublicMessageRequest()
+                {
+                    Username = username,
+                    Message = message
+                });
+            }
         }
 
-        public void Send(StarId user, string message)
+        public void Send(StarNodeId nodeId, string message)
         {
-            // return _server.Call(BaseCommand.CommandId<Commands.ClientPrivateMessageCommand>(), new ClientPrivateMessageRequest()
-            // {
-            //     Message = message
-            // });
+            _server.Call(nodeId, BaseCommand.CommandId<Commands.ClientPrivateMessageCommand>(), new ClientPrivateMessageRequest()
+            {
+                Message = message
+            });
         }
 
         protected override void RegisterCommands()

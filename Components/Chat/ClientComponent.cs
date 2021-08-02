@@ -37,6 +37,6 @@ namespace Chat
         }
 
         public Action<StarId, string> OnPrivateMessage = (StarId user, string message) => { };
-        public Action<string> OnPublicMessage = (string message) => { };
+        public Action<string, string> OnPublicMessage = (string username, string message) => { };
     }
 }

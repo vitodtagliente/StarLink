@@ -93,6 +93,7 @@ namespace StarLink.NetworkLinks
                         nodeId = StarNodeId.Next();
                         OnNodeConnection.Invoke(nodeId);
                         _clients.Add(nodeId, endpoint);
+                        Clients.Add(nodeId);
                         _translationMap.Add(endpoint, nodeId);
                     }
                     else
