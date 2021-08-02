@@ -14,9 +14,9 @@ namespace StarLink.NetworkLinks
         public ServerLinkWS()
             : base(StarProtocol.WebSockets)
         {
-            clients = new Dictionary<StarNodeId, WebSocket>();
-            tokenSource = new CancellationTokenSource();
-            token = tokenSource.Token;
+            _clients = new Dictionary<StarNodeId, WebSocket>();
+            _tokenSource = new CancellationTokenSource();
+            _token = _tokenSource.Token;
         }
 
         public override void Send(string message)
@@ -29,15 +29,15 @@ namespace StarLink.NetworkLinks
 
         public override void Close()
         {
-            if (httpListener?.IsListening ?? false)
+            if (_httpListener?.IsListening ?? false)
             {
                 Console.WriteLine("Server is stopping.");
                 State = LinkState.Closed;
 
-                tokenSource.Cancel();
-                httpListener.Stop();
-                httpListener.Close();
-                tokenSource.Dispose();
+                _tokenSource.Cancel();
+                _httpListener.Stop();
+                _httpListener.Close();
+                _tokenSource.Dispose();
             }
         }
 
@@ -48,14 +48,14 @@ namespace StarLink.NetworkLinks
                 return;
             }
 
-            httpListener = new HttpListener();
-            httpListener.Prefixes.Add($"http://localhost:{port}/");
-            httpListener.Start();
+            _httpListener = new HttpListener();
+            _httpListener.Prefixes.Add($"http://localhost:{port}/");
+            _httpListener.Start();
 
             State = LinkState.Connected;
             Console.WriteLine("Listening...");
 
-            if (httpListener.IsListening)
+            if (_httpListener.IsListening)
             {
                 State = LinkState.Connected;
                 Task.Run(() => AcceptConnection().ConfigureAwait(false));
@@ -69,9 +69,9 @@ namespace StarLink.NetworkLinks
 
         private async Task AcceptConnection()
         {
-            while (!token.IsCancellationRequested)
+            while (!_token.IsCancellationRequested)
             {
-                HttpListenerContext context = await httpListener.GetContextAsync();
+                HttpListenerContext context = await _httpListener.GetContextAsync();
                 if (context.Request.IsWebSocketRequest)
                 {
                     HttpListenerWebSocketContext wsContext = null;
@@ -102,20 +102,20 @@ namespace StarLink.NetworkLinks
             var socket = context.WebSocket;
             try
             {
-                clients.Add(nodeId, socket);
+                _clients.Add(nodeId, socket);
                 OnNodeConnection(nodeId);
 
                 byte[] buffer = new byte[4096];
-                while (socket.State == WebSocketState.Open && !token.IsCancellationRequested)
+                while (socket.State == WebSocketState.Open && !_token.IsCancellationRequested)
                 {
-                    WebSocketReceiveResult receiveResult = await socket.ReceiveAsync(new ArraySegment<byte>(buffer), token);
+                    WebSocketReceiveResult receiveResult = await socket.ReceiveAsync(new ArraySegment<byte>(buffer), _token);
                     if (receiveResult.MessageType == WebSocketMessageType.Close)
                     {
                         Console.WriteLine($"Socket {nodeId}: Closing websocket.");
                         OnNodeDisconnection(nodeId);
-                        clients.Remove(nodeId);
+                        _clients.Remove(nodeId);
 
-                        await socket.CloseAsync(WebSocketCloseStatus.NormalClosure, "", token);
+                        await socket.CloseAsync(WebSocketCloseStatus.NormalClosure, "", _token);
                     }
                     else
                     {
@@ -144,20 +144,20 @@ namespace StarLink.NetworkLinks
 
         public override async void Send(StarNodeId nodeId, string message)
         {
-            if (httpListener?.IsListening ?? false)
+            if (_httpListener?.IsListening ?? false)
             {
-                WebSocket socket = clients[nodeId];
+                WebSocket socket = _clients[nodeId];
                 if (socket != null)
                 {
                     byte[] buffer = ASCIIEncoding.UTF8.GetBytes(message);
-                    await socket.SendAsync(new ArraySegment<byte>(buffer, 0, buffer.Length), WebSocketMessageType.Binary, true, token).ConfigureAwait(false);
+                    await socket.SendAsync(new ArraySegment<byte>(buffer, 0, buffer.Length), WebSocketMessageType.Binary, true, _token).ConfigureAwait(false);
                 }
             }
         }
 
-        private HttpListener httpListener;
-        private Dictionary<StarNodeId, WebSocket> clients;
-        private CancellationTokenSource tokenSource;
-        private CancellationToken token;
+        private HttpListener _httpListener;
+        private Dictionary<StarNodeId, WebSocket> _clients;
+        private CancellationTokenSource _tokenSource;
+        private CancellationToken _token;
     }
 }
