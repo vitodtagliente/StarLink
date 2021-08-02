@@ -3,7 +3,7 @@ using System.Net;
 
 using StarLink;
 
-namespace Server
+namespace Test
 {
     class Program
     {
