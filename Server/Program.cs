@@ -54,7 +54,7 @@ namespace Server
                     error = authComponent.Authenticate(new Authentication.AuthenticationRequest()
                     {
                         Username = "Vito"
-                    }, out Authentication.AuthenticationResponse response);
+                    });
                 }
 
                 if (client.Components.TryGet(out Network.ClientComponent netComponent))

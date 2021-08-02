@@ -11,9 +11,9 @@ namespace Authentication
         {
         }
 
-        public HttpStatusCode Authenticate(AuthenticationRequest request, out AuthenticationResponse response)
+        public HttpStatusCode Authenticate(AuthenticationRequest request)
         {
-            HttpStatusCode error = Call(BaseCommand.CommandId<Commands.AuthenticationCommand>(), request, out response);
+            HttpStatusCode error = Call(BaseCommand.CommandId<Commands.AuthenticationCommand>(), request, out AuthenticationResponse response);
             if (error == HttpStatusCode.OK)
             {
                 _client.Session.IsAuthenticated = response.Session.IsAuthenticated;
