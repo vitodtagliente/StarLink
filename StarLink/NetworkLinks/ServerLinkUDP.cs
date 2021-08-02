@@ -32,6 +32,7 @@ namespace StarLink.NetworkLinks
             {
                 OnNodeDisconnection(nodeId);
                 _translationMap.Remove(endpoint);
+                Clients.Remove(nodeId);
             };
         }
 
