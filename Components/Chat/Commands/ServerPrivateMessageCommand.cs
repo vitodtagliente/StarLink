@@ -5,7 +5,7 @@ using StarLink;
 
 namespace Chat.Commands
 {
-    [CommandSettings(Id = "PrivateMessage")]
+    [CommandSettings(Id = "PrivateMessage", RequireResponse = false)]
     class ServerPrivateMessageCommand : Command<ServerComponent, ServerPrivateMessageRequest, EmptyCommandData>
     {
         public ServerPrivateMessageCommand(ServerComponent component)

@@ -91,7 +91,10 @@ namespace StarLink
                         HttpStatusCode error = command.Execute(session, message, out response);
                         if (error == HttpStatusCode.OK)
                         {
-                            sendAction.Invoke(response);
+                            if (command.Settings.RequireResponse)
+                            {
+                                sendAction.Invoke(response);
+                            }
                         }
                         else
                         {

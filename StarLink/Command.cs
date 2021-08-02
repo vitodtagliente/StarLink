@@ -11,6 +11,7 @@ namespace StarLink
     {
         public string Id = string.Empty;
         public bool RequireAuthentication = false;
+        public bool RequireResponse = true;
         public bool Reliable = false;
     }
 
