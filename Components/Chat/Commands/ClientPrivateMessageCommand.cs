@@ -1,7 +1,6 @@
-﻿using System;
+﻿using StarLink;
+using System;
 using System.Net;
-
-using StarLink;
 
 namespace Chat.Commands
 {

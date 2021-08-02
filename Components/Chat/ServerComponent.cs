@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-using StarLink;
+﻿using StarLink;
+using System.Net;
 
 namespace Chat
 {
@@ -15,7 +12,7 @@ namespace Chat
 
         }
 
-        public void Send(string username, string message)
+        public HttpStatusCode Send(string username, string message)
         {
             foreach (StarNodeId nodeId in _server.Clients)
             {
@@ -25,11 +22,12 @@ namespace Chat
                     Message = message
                 });
             }
+            return HttpStatusCode.OK;
         }
 
-        public void Send(StarNodeId nodeId, string message)
+        public HttpStatusCode Send(StarNodeId nodeId, string message)
         {
-            _server.Call(nodeId, BaseCommand.CommandId<Commands.ClientPrivateMessageCommand>(), new ClientPrivateMessageRequest()
+            return _server.Call(nodeId, BaseCommand.CommandId<Commands.ClientPrivateMessageCommand>(), new ClientPrivateMessageRequest()
             {
                 Message = message
             });
