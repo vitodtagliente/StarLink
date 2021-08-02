@@ -5,7 +5,7 @@ using StarLink;
 
 namespace Chat.Commands
 {
-    [CommandSettings(Id = "PrivateMessage")]
+    [CommandSettings(Id = "PrivateMessage", RequireAuthentication = true)]
     class ClientPrivateMessageCommand : Command<ClientComponent, ClientPrivateMessageRequest, EmptyCommandData>
     {
         public ClientPrivateMessageCommand(ClientComponent component)

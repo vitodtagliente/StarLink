@@ -5,7 +5,7 @@ using StarLink;
 
 namespace Chat.Commands
 {
-    [CommandSettings(Id = "PublicMessage")]
+    [CommandSettings(Id = "PublicMessage", RequireAuthentication = true)]
     class ClientPublicMessageCommand : Command<ClientComponent, ClientPublicMessageRequest, EmptyCommandData>
     {
         public ClientPublicMessageCommand(ClientComponent component)
@@ -20,7 +20,7 @@ namespace Chat.Commands
 
             if (string.IsNullOrEmpty(request.Message))
             {
-                Console.WriteLine("Chat messages cannot be empty,message {0}", request.Message);
+                Console.WriteLine("Chat messages cannot be empty, message {0}", request.Message);
                 return HttpStatusCode.BadRequest;
             }
 

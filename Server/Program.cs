@@ -63,6 +63,17 @@ namespace Server
                     Console.WriteLine("Ping {0}ms", ping);
                 }
 
+                if (client.Components.TryGet(out Chat.ClientComponent chatComponent))
+                {
+                    chatComponent.OnPublicMessage = (string username, string message) =>
+                    {
+                        Console.WriteLine("[Chat][Public][{0}] {1}: {2}", DateTime.Now.ToShortTimeString(), username, message);
+                    };
+
+                    chatComponent.Send("Ciao");
+                    chatComponent.Send("Come va?");
+                }
+
                 Console.ReadKey(true);
                 client.Close();
                 server.Close();
