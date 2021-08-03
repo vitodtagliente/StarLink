@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GameWorld
+namespace Game
 {
     [Serializable]
     public class Vector3

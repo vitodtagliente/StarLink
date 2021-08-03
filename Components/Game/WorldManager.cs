@@ -1,7 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
 
-namespace GameWorld
+namespace Game
 {
     public class WorldManager
     {

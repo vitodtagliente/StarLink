@@ -3,9 +3,9 @@ using System.Net;
 
 using StarLink;
 
-namespace GameWorld
+namespace Game
 {
-    [ComponentSettings(Id = "GameWorld")]
+    [ComponentSettings(Id = "Game")]
     public class ClientComponent : StarLink.ClientComponent
     {
         public ClientComponent(StarClient client)

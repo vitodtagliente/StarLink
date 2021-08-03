@@ -22,7 +22,7 @@ namespace Test
             };
             server.Components.Add(new Authentication.ServerComponent(server));
             server.Components.Add(new Chat.ServerComponent(server));
-            server.Components.Add(new GameWorld.ServerComponent(server));
+            server.Components.Add(new Game.ServerComponent(server));
             server.Components.Add(new Network.ServerComponent(server));
 
             StarClient client = new StarClient(StarProtocol.UDP)
@@ -34,7 +34,7 @@ namespace Test
             };
             client.Components.Add(new Authentication.ClientComponent(client));
             client.Components.Add(new Chat.ClientComponent(client));
-            client.Components.Add(new GameWorld.ClientComponent(client));
+            client.Components.Add(new Game.ClientComponent(client));
             client.Components.Add(new Network.ClientComponent(client));
 
             if (server != null && client != null)

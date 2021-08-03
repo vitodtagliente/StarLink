@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using StarLink;
 
-namespace GameWorld
+namespace Game
 {
     enum UserDataType
     {

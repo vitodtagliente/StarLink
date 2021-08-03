@@ -3,7 +3,7 @@ using System.Net;
 
 using StarLink;
 
-namespace GameWorld.Commands
+namespace Game.Commands
 {
     [CommandSettings(Id = "GameWorld.HandShake")]
     class HandShakeCommand : Command<ServerComponent, EmptyCommandData, HandShakeResponse>

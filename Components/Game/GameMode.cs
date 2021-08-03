@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GameWorld.Commands
+namespace Game
 {
-    public class TravelCommand
+    public abstract class GameMode
     {
     }
 }

@@ -3,7 +3,7 @@ using System.Net;
 
 using StarLink;
 
-namespace GameWorld.Commands
+namespace Game.Commands
 {
     [CommandSettings(Id = "Spawn")]
     class SpawnCommand : Command<ServerComponent, SpawnRequest, SpawnResponse>

@@ -4,9 +4,9 @@ using System.Text;
 
 using StarLink;
 
-namespace GameWorld
+namespace Game
 {
-    [ComponentSettings(Id = "GameWorld")]
+    [ComponentSettings(Id = "Game")]
     public class ServerComponent : StarLink.ServerComponent
     {
         public ServerComponent(StarServer server)

@@ -2,7 +2,7 @@
 
 using StarLink;
 
-namespace GameWorld
+namespace Game
 {
     [Serializable]
     public class GameObject
