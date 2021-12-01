@@ -9,4 +9,10 @@ namespace Game
         public Transform Transform { get; set; }
         public bool IsUserController { get; set; }
     }
+
+    [Serializable]
+    public class MoveRequest
+    {
+        public Transform Transform { get; set; }
+    }
 }

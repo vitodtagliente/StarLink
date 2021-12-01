@@ -35,5 +35,10 @@ namespace Game
             };
             return _objects.TryAdd(gameObject.Id, gameObject);
         }
+
+        public bool FindGameObject(StarId id, out GameObject gameObject)
+        {
+            return _objects.TryGetValue(id, out gameObject);
+        }
     }
 }

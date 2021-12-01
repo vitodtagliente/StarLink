@@ -35,5 +35,12 @@ namespace StarLink
         {
             return HashCode.Combine(Id);
         }
+
+        public static StarId Parse(string id)
+        {
+            StarId starId = new StarId();
+            starId.Id = id;
+            return starId;
+        }
     }
 }

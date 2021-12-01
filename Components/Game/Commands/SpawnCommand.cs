@@ -27,6 +27,8 @@ namespace Game.Commands
                 if (world.TrySpawn(request.Type, request.Transform, out GameObject spawnedObject))
                 {
                     response.GameObject = spawnedObject;
+                    userSession.User.State.Possess(spawnedObject);
+                    userSession.User.State.SetWorld(world);
                     return HttpStatusCode.OK;
                 }
             }

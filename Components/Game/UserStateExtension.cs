@@ -6,6 +6,7 @@ namespace Game
 {
     enum UserDataType
     {
+        [Description("PossessedGameObject")] PossessedGameObject,
         [Description("World")] World
     }
 
@@ -23,9 +24,9 @@ namespace Game
 
     static class UserStateExtension
     {
-        public static void SetWorld(this UserState userState, string world)
+        public static void SetWorld(this UserState userState, World world)
         {
-            userState.Data.Add(UserDataType.World.GetDescription(), world);
+            userState.Data.Add(UserDataType.World.GetDescription(), world.Name);
         }
 
         public static bool TryGetWorld(this UserState userState, out string world)
@@ -34,6 +35,22 @@ namespace Game
             if (userState.Data.ContainsKey(UserDataType.World.GetDescription()))
             {
                 world = userState.Data[UserDataType.World.GetDescription()];
+                return true;
+            }
+            return false;
+        }
+
+        public static void Possess(this UserState userState, GameObject gameObject)
+        {
+            userState.Data.Add(UserDataType.PossessedGameObject.GetDescription(), gameObject.Id.ToString());
+        }
+
+        public static bool TryGetGameObject(this UserState userState, out StarId id)
+        {
+            id = StarId.Empty;
+            if (userState.Data.ContainsKey(UserDataType.PossessedGameObject.GetDescription()))
+            {
+                id = StarId.Parse(userState.Data[UserDataType.PossessedGameObject.GetDescription()]);
                 return true;
             }
             return false;
