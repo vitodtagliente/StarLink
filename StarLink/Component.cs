@@ -83,6 +83,9 @@ namespace StarLink
             return _server.Call(nodeId, commandId, request, out response, timeout);
         }
 
+        public virtual void OnClientConnection(UserSession userSession) { }
+        public virtual void OnClientDisconnection(UserSession userSession) { }
+
         protected StarServer _server { get; private set; }
     }
 }

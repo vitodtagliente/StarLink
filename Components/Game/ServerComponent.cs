@@ -17,11 +17,20 @@ namespace Game
 
         private WorldManager _worldManager;
 
-
         protected override void RegisterCommands()
         {
             _server.Commands.Add(new Commands.HandShakeCommand(this, _worldManager));
             _server.Commands.Add(new Commands.SpawnCommand(this, _worldManager));
+        }
+
+        public override void OnClientConnection(UserSession userSession)
+        {
+
+        }
+
+        public override void OnClientDisconnection(UserSession userSession)
+        {
+
         }
     }
 }

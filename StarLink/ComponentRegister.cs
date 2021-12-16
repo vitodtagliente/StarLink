@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Concurrent;
 
 namespace StarLink
@@ -37,6 +38,10 @@ namespace StarLink
                 }
             }
             return false;
+        }
+        public IEnumerator GetEnumerator()
+        {
+            return _components.Values.GetEnumerator();
         }
 
         private ConcurrentDictionary<string, T> _components;

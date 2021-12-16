@@ -14,8 +14,25 @@ namespace StarLink
             _link = ServerNetworkLink.Factory(protocol);
             _link.OnOpen = () => OnListening.Invoke();
             _link.OnError = () => OnError.Invoke();
-            _link.OnNodeConnection = (StarNodeId nodeId) => OnClientConnection.Invoke(_sessionManager.Create(nodeId));
-            _link.OnNodeDisconnection = (StarNodeId nodeId) => OnClientDisconnection.Invoke(_sessionManager.Create(nodeId));
+            _link.OnNodeConnection = (StarNodeId nodeId) =>
+            {
+                UserSession userSession = _sessionManager.Create(nodeId);
+                foreach (ServerComponent component in Components)
+                {
+                    component.OnClientConnection(userSession);
+                }
+                OnClientConnection.Invoke(userSession);
+            };
+            _link.OnNodeDisconnection = (StarNodeId nodeId) =>
+            {
+                UserSession userSession = _sessionManager[nodeId];
+                foreach (ServerComponent component in Components)
+                {
+                    component.OnClientDisconnection(userSession);
+                }
+                OnClientDisconnection.Invoke(userSession);
+                _sessionManager.Remove(nodeId);
+            };
             _link.OnNodeMessage = (StarNodeId nodeId, string data) =>
             {
                 UserSession session = _sessionManager.Create(nodeId);
@@ -23,7 +40,7 @@ namespace StarLink
                 StarMessage message = MessageSerializer.Deserialize(data);
                 if (message != null)
                 {
-                    if(message.IsCommand)
+                    if (message.IsCommand)
                     {
                         _commandProcessor.Process(session, message);
                     }
